@@ -1,0 +1,26 @@
+@import "_nullstyle";
+@import "_variables";
+@import "_footer";
+@import "_header";
+@import "_navbar_mobile";
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.main {
+  flex: 1 1 auto;
+  // background: $smoky;
+}
+.hide-mobile {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+.hide-desktop {
+  @media (min-width: 769px) {
+    display: none !important;
+  }
+}
