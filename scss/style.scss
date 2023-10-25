@@ -3,6 +3,8 @@
 @import "_footer";
 @import "_header";
 @import "_navbar_mobile";
+@import "_basket";
+@import "_basket-form";
 
 body {
   display: flex;
@@ -12,7 +14,11 @@ body {
 
 .main {
   flex: 1 1 auto;
-  // background: $smoky;
+  background: $smoky;
+  padding: 10px 24px 26px;
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
 }
 .hide-mobile {
   @media (max-width: 768px) {

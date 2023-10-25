@@ -79,7 +79,305 @@
         </div>
       </div>
     </header>
-    <main class="main"></main>
+
+    <main class="main">
+      <form class="basket-form">
+        <div class="basket-form__content">
+          <div class="basket-form__basket basket">
+            <div class="basket__title">Корзина</div>
+            <div class="basket__accordion accordion">
+              <div class="accordion__header">
+                <label class="accordion__checkbox checkbox checkbox_with-text">
+                  <input type="checkbox" />
+                  <span class="checkbox__decor"></span>
+                  <span class="checkbox__text">Выбрать все</span>
+                </label>
+
+                <div class="accordion__info">
+                  <span class="accordion__count"> 6 товаров </span>
+                  <span class="accordion__price"> 4&nbsp;466&nbsp;₽ </span>
+                </div>
+                <div class="accordion__icon"></div>
+              </div>
+
+              <div class="accordion__body">
+                <div class="accordion__item item">
+                  <div class="item__wrap">
+                    <label class="item__checkbox checkbox">
+                      <input type="checkbox" />
+                      <span class="checkbox__decor"></span>
+                    </label>
+                    <a
+                      href="#"
+                      class="item__img"
+                      title="Футболка UZcotton мужская"
+                    >
+                      <img
+                        src="./img/item_01.png"
+                        alt="Футболка UZcotton мужская"
+                      />
+                    </a>
+                  </div>
+
+                  <div class="item__good-info good-info">
+                    <a href="#" class="good-info__title">
+                      <span class="good-info__name">
+                        Силиконовый чехол картхолдер (отверстия) для карт,
+                        прозрачный кейс бампер на Apple iPhone XR, MobiSafe
+                      </span>
+                    </a>
+                    <div class="good-info__properties">
+                      <span class="good-info__item">Цвет: белый</span>
+                      <span class="good-info__item">Размер: 56</span>
+                    </div>
+
+                    <div class="good-info__store">
+                      <span class="good-info__item">Коледино WB</span>
+                    </div>
+                    <div class="good-info__seller">
+                      <span class="good-info__item">OOO Вайлдберриз</span>
+                      <div class="good-info__seller-info seller-info">
+                        <img
+                          class="seller-info__icon"
+                          src="./img/seller-info.svg"
+                        />
+                        <div class="seller-info__popup">
+                          <span class="seller-info__name"
+                            >OOO Вайлдберриз
+                          </span>
+                          <span class="seller-info__registration"
+                            >ОГРН: 5167746237148</span
+                          >
+                          <span class="seller-info__address"
+                            >129337, Москва, улица Красная Сосна, 2, корпус 1,
+                            стр. 1, помещение 2, офис 34</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item__btn-wrap">
+                    <div class="item__count count">
+                      <button type="button" class="count__minus">−</button>
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        maxlength="3"
+                        min="1"
+                        max="5"
+                        class="count__numeric"
+                        value="1"
+                      />
+                      <button type="button" class="count__plus">+</button>
+                    </div>
+                    <div class="item__limit">Осталось 2 шт.</div>
+                    <div class="item__btn btn">
+                      <button class="btn__postpone" type="button">
+                        <span
+                          >В избранное
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="19"
+                            height="16"
+                            viewBox="0 0 19 16"
+                            fill="none"
+                          >
+                            <path
+                              d="M8.7038 2.12882C8.7978 2.22448 8.9263 2.27836 9.06041 2.27836C9.19453 2.27836 9.32302 2.22448 9.41703 2.12882C10.037 1.49801 11.1892 0.499741 13.0604 0.499741C14.212 0.499741 15.4619 0.874807 16.3615 1.68724C17.261 2.49966 17.8104 3.74962 17.5604 5.49974C17.3104 7.24975 16.1854 8.99974 14.6229 10.6872C13.0604 12.3747 11.0604 13.9997 9.06041 15.4997C7.06042 13.9997 5.06043 12.3747 3.49793 10.6872C1.93545 8.99974 0.810441 7.24975 0.56041 5.49974C0.310364 3.74962 0.859731 2.49966 1.75929 1.68724C2.65885 0.874807 3.90881 0.499741 5.06041 0.499741C6.93163 0.499741 8.08386 1.49801 8.7038 2.12882Z"
+                              stroke="black"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button class="btn__del" type="button">
+                        <span
+                          >Удалить
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
+                              fill="black"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
+                              fill="black"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
+                              fill="black"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="item__price">
+                    <span class="item__price-new">1975 ₽</span>
+                    <span class="item__price-old">5000 ₽</span>
+                  </div>
+                </div>
+                <div class="accordion__item item">
+                  <div class="item__wrap">
+                    <label class="item__checkbox checkbox">
+                      <input type="checkbox" />
+                      <span class="checkbox__decor"></span>
+                    </label>
+                    <a
+                      href="#"
+                      class="item__img"
+                      title="Футболка UZcotton мужская"
+                    >
+                      <img
+                        src="./img/item_01.png"
+                        alt="Футболка UZcotton мужская"
+                      />
+                    </a>
+                  </div>
+
+                  <div class="item__good-info good-info">
+                    <a href="#" class="good-info__title">
+                      <span class="good-info__name">
+                        Силиконовый чехол картхолдер (отверстия) для карт,
+                        прозрачный кейс бампер на Apple iPhone XR, MobiSafe
+                      </span>
+                    </a>
+                    <div class="good-info__properties">
+                      <span class="good-info__item">Цвет: белый</span>
+                      <span class="good-info__item">Размер: 56</span>
+                    </div>
+
+                    <div class="good-info__store">
+                      <span class="good-info__item">Коледино WB</span>
+                    </div>
+                    <div class="good-info__seller">
+                      <span class="good-info__item">OOO Вайлдберриз</span>
+                      <div class="good-info__seller-info seller-info">
+                        <img
+                          class="seller-info__icon"
+                          src="./img/seller-info.svg"
+                        />
+                        <div class="seller-info__popup">
+                          <span class="seller-info__name"
+                            >OOO Вайлдберриз
+                          </span>
+                          <span class="seller-info__registration"
+                            >ОГРН: 5167746237148</span
+                          >
+                          <span class="seller-info__address"
+                            >129337, Москва, улица Красная Сосна, 2, корпус 1,
+                            стр. 1, помещение 2, офис 34</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item__btn-wrap">
+                    <div class="item__count count">
+                      <button type="button" class="count__minus">−</button>
+                      <input
+                        type="number"
+                        autocomplete="off"
+                        maxlength="3"
+                        min="1"
+                        max="5"
+                        class="count__numeric"
+                        value="1"
+                      />
+                      <button type="button" class="count__plus">+</button>
+                    </div>
+                    <div class="item__limit">Осталось 2 шт.</div>
+                    <div class="item__btn btn">
+                      <button class="btn__postpone" type="button">
+                        <span
+                          >В избранное
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="19"
+                            height="16"
+                            viewBox="0 0 19 16"
+                            fill="none"
+                          >
+                            <path
+                              d="M8.7038 2.12882C8.7978 2.22448 8.9263 2.27836 9.06041 2.27836C9.19453 2.27836 9.32302 2.22448 9.41703 2.12882C10.037 1.49801 11.1892 0.499741 13.0604 0.499741C14.212 0.499741 15.4619 0.874807 16.3615 1.68724C17.261 2.49966 17.8104 3.74962 17.5604 5.49974C17.3104 7.24975 16.1854 8.99974 14.6229 10.6872C13.0604 12.3747 11.0604 13.9997 9.06041 15.4997C7.06042 13.9997 5.06043 12.3747 3.49793 10.6872C1.93545 8.99974 0.810441 7.24975 0.56041 5.49974C0.310364 3.74962 0.859731 2.49966 1.75929 1.68724C2.65885 0.874807 3.90881 0.499741 5.06041 0.499741C6.93163 0.499741 8.08386 1.49801 8.7038 2.12882Z"
+                              stroke="black"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <button class="btn__del" type="button">
+                        <span
+                          >Удалить
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
+                              fill="black"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
+                              fill="black"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
+                              fill="black"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="item__price">
+                    <span class="item__price-new">1975 ₽</span>
+                    <span class="item__price-old">5000 ₽</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="basket__accordion accordion not-available"></div>
+          </div>
+          <div class="basket-form__section">
+            <div class="basket-form__delivery"></div>
+          </div>
+          <div class="basket-form__section">
+            <div class="basket-form__payment"></div>
+          </div>
+          <div class="basket-form__section">
+            <div class="basket-form__recipient"></div>
+          </div>
+        </div>
+
+        <div class="basket-form__sidebar sidebar"></div>
+      </form>
+    </main>
+
     <footer class="footer">
       <span>© 2022 ООО «Товары и точка»</span>
     </footer>
@@ -241,3 +539,109 @@
     </div> -->
   </body>
 </html>
+
+<!-- <div class="basket-section__basket-list basket-list">
+  <div class="basket-list__accordion accordion">
+    <div class="accordion__header">
+      <label class="accordion__checkbox checkbox-with-text">
+        <input type="checkbox" />
+        <span class="checkbox-with-text__decor"></span>
+        <span class="checkbox-with-text__text">Выбрать все</span>
+      </label>
+
+      <div class="accordion__info">
+        <span class="accordion__count"> 6 товаров </span>
+        <span class="accordion__price"> 4&nbsp;466&nbsp;₽ </span>
+      </div>
+      <div class="accordion__icon"></div>
+    </div>
+
+    <div class="accordion__body" style="display: block">
+      <div class="accordion__list">
+        <div>
+          <div class="accordion__item item">
+            <div class="item__wrap">
+              <label class="item__checkbox checkbox">
+                <input type="checkbox" class="j-cb-include" />
+                <span class="checkbox__decor"></span>
+              </label>
+
+              <div class="item__good">
+                <a
+                  href="/catalog/164301901/detail.aspx?size=273728724"
+                  class="img-plug item__good-img"
+                  title="Перчатки одноразовые нитриловые Safe&amp;Care 50 пар"
+                >
+                  <img
+                    loading="lazy"
+                    src="https://basket-11.wb.ru/vol1643/part164301/164301901/images/c246x328/1.webp"
+                    alt="Перчатки одноразовые нитриловые Safe&amp;Care 50 пар"
+                  />
+
+                  <span class="item__size hide-desktop">S</span>
+                </a>
+                <div class="item__good-info good-info">
+                  <a
+                    href="/catalog/164301901/detail.aspx?size=273728724"
+                    class="good-info__title"
+                  >
+                    <span class="good-info__good-name">
+                      Перчатки одноразовые нитриловые Safe&amp;Care 50 пар
+                    </span>
+                    <span class="good-info__good-brand">, Safe&amp;Care</span>
+                  </a>
+                  <div class="good-info__properties">
+                    <p class="good-info__color">
+                      <span class="good-info__item">черный</span>
+                    </p>
+                    <p class="good-info__size hide-mobile">
+                      <span class="good-info__item">S</span>
+                    </p>
+                  </div>
+                  <div class="good-info__seller seller hide-mobile"></div>
+                  <div
+                    class="good-info__properties good-info__properties--variable"
+                  >
+                    <p class="good-info__store">
+                      <span class="good-info__item">
+                        склад продавца Самара
+                      </span>
+                    </p>
+                  </div>
+                  <div class="good-info__badge-wrap"></div>
+                </div>
+              </div>
+              <div class="item__count count">
+                <div class="count__wrap">
+                  <div class="count__input-number">
+                    <button type="button" class="count__minus minus"></button>
+                    <input
+                      type="number"
+                      autocomplete="off"
+                      maxlength="2"
+                      min="1"
+                      class="in_tb count__numeric ignore"
+                    />
+                    <button type="button" class="count__plus plus"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="item__price">
+                <div class="item__price-new">1&nbsp;975&nbsp;₽</div>
+                <div class="item__price-old">5&nbsp;000&nbsp;₽</div>
+                <div class="item__btn btn">
+                  <button class="btn__postpone" type="button">
+                    <span> В избранное </span>
+                  </button>
+                  <button class="btn__del" type="button">
+                    <span> Удалить </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

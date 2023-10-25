@@ -1,0 +1,323 @@
+@import "_variables";
+
+/*_basket*/
+
+.basket {
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.28px;
+    margin-bottom: 27px;
+    @media (max-width: 768px) {
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: -0.2px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__accordion {
+  }
+}
+.accordion {
+  &__header {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $rulers;
+    margin-bottom: 11px;
+  }
+
+  &__checkbox {
+  }
+
+  &__info {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    display: none;
+  }
+
+  &__count {
+  }
+
+  &__price {
+    &::before {
+      content: " · ";
+    }
+  }
+
+  &__icon {
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__item {
+  }
+}
+.checkbox {
+  & input {
+    display: none;
+  }
+  &__decor {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 1px solid $rulers_input;
+    margin-right: 12px;
+  }
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  &_active {
+    .checkbox__decor {
+      width: 22px;
+      height: 22px;
+      border: none;
+      background-image: url(../img/checkbox.svg);
+    }
+  }
+}
+.checkbox_with-text {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  &:hover &__btn {
+    opacity: 1;
+  }
+
+  &__checkbox {
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+  }
+
+  // &__good {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 16px;
+  //   flex: 1;
+  // }
+
+  &__img {
+  }
+
+  &__good-info {
+    flex: 1;
+  }
+
+  &__btn-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  &__count {
+  }
+
+  &__limit {
+    width: 100%;
+    color: $orange;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  &__btn {
+    opacity: 0;
+    transition: opacity 0.8s;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    width: 110px;
+  }
+
+  &__price-new {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__price-old {
+    color: $gray;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    border-bottom: 1px dashed $gray;
+    text-decoration: line-through;
+  }
+}
+
+.good-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  &__title {
+  }
+
+  &__name {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    width: 100%;
+    color: $black;
+  }
+
+  &__properties {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__item {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  &__store {
+    color: $gray;
+  }
+
+  &__seller {
+    display: flex;
+    gap: 6px;
+    color: $gray;
+  }
+
+  &__seller-info {
+  }
+}
+
+.seller-info {
+  position: relative;
+
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    background: $white;
+    border-radius: 8px;
+    padding: 6px 16px 18px;
+
+    flex-direction: column;
+    gap: 8px;
+    color: $black;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    width: 280px;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__registration {
+  }
+
+  &__address {
+  }
+
+  &:hover .seller-info__popup {
+    display: flex;
+  }
+}
+
+.count {
+  width: 100px;
+  height: 44px;
+  border-radius: 8px;
+  background: $white;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+
+  &__minus {
+    width: 24px;
+    padding: 2px 7px 6px 8px;
+    background: $white;
+  }
+
+  &__numeric {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    width: 44px;
+  }
+
+  &__plus {
+    width: 24px;
+    padding: 2px 7px 6px 8px;
+    background: $white;
+  }
+
+  &__limit {
+    color: $rulers;
+    cursor: default;
+  }
+
+  &__numeric::-webkit-outer-spin-button,
+  &__numeric::-webkit-inner-spin-button {
+    display: none;
+  }
+}
+
+.btn {
+  display: flex;
+  gap: 16px;
+  & span {
+    font-size: 0;
+  }
+
+  &__postpone {
+    background: transparent;
+    &:hover path {
+      stroke: $accent;
+    }
+
+    &_active path {
+      fill: $accent;
+      stroke: $accent;
+    }
+  }
+
+  &__del {
+    background: transparent;
+    &:hover path {
+      fill: $orange;
+    }
+  }
+}
+.not-available {
+}
+
+/*--------------------*/
