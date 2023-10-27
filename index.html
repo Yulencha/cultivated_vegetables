@@ -2,12 +2,10 @@
 <html lang="ru" class="h-100">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      containerent="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" containerent="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/scripts.js" defer></script>
+    <script type="module" src="./js/scripts.js" defer></script>
+
     <title></title>
   </head>
 
@@ -15,11 +13,7 @@
     <header class="header">
       <div class="header__container">
         <div class="header__navbar-element navbar-element">
-          <button
-            class="navbar-element__burger"
-            type="button"
-            aria-label="Навигация по сайту"
-          >
+          <button class="navbar-element__burger" type="button" aria-label="Навигация по сайту">
             <span class="navbar-element__burger-line"></span>
           </button>
           <a class="navbar-element__logo" href="#"> Товары и точка </a>
@@ -33,33 +27,20 @@
             class="search-catalog__input hide-mobile"
             type="search"
             maxlength="300"
-            placeholder="Я ищу..."
-          />
+            placeholder="Я ищу..." />
 
           <button
             class="search-catalog__btn search-catalog__btn-clear hide-mobile"
             type="reset"
-            aria-label="Очистить поиск"
-          ></button>
+            aria-label="Очистить поиск"></button>
 
-          <button
-            class="search-catalog__btn search-catalog__btn-search"
-            type="button"
-            aria-label="Поиск товара"
-          >
-            <svg
-              width="21"
-              height="21"
-              viewBox="0 0 21 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+          <button class="search-catalog__btn search-catalog__btn-search" type="button" aria-label="Поиск товара">
+            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
                 d="M1.99886 8C1.99886 6.4087 2.631 4.88258 3.75622 3.75736C4.88143 2.63214 6.40756 2 7.99886 2C9.59015 2 11.1163 2.63214 12.2415 3.75736C13.3667 4.88258 13.9989 6.4087 13.9989 8C13.9989 9.5913 13.3667 11.1174 12.2415 12.2426C11.1163 13.3679 9.59015 14 7.99886 14C6.40756 14 4.88143 13.3679 3.75622 12.2426C2.631 11.1174 1.99886 9.5913 1.99886 8ZM7.99886 0C6.72572 0.000182277 5.471 0.304218 4.339 0.886839C3.20699 1.46946 2.23038 2.31384 1.49034 3.3498C0.750296 4.38577 0.268189 5.5834 0.0840862 6.84315C-0.100017 8.10291 0.0192008 9.38842 0.431832 10.5928C0.844462 11.7973 1.53859 12.8858 2.45652 13.768C3.37446 14.6502 4.48969 15.3006 5.70953 15.6651C6.92938 16.0296 8.2186 16.0977 9.47006 15.8638C10.7215 15.6298 11.8991 15.1006 12.9049 14.32L18.4339 19.85C18.6215 20.0375 18.8759 20.1428 19.1412 20.1427C19.4065 20.1426 19.6608 20.0371 19.8484 19.8495C20.0359 19.6619 20.1412 19.4074 20.1411 19.1421C20.141 18.8769 20.0355 18.6225 19.8479 18.435L14.3179 12.905C15.2356 11.7225 15.8032 10.3063 15.9561 8.81726C16.109 7.32825 15.8411 5.82621 15.1829 4.48188C14.5246 3.13754 13.5024 2.00485 12.2324 1.21256C10.9625 0.420272 9.4957 0.000166004 7.99886 0Z"
-                fill="white"
-              />
+                fill="white" />
             </svg>
           </button>
         </div>
@@ -94,274 +75,44 @@
                 </label>
 
                 <div class="accordion__info">
+                  <span class="accordion__info-title"></span>
                   <span class="accordion__count"> 6 товаров </span>
                   <span class="accordion__price"> 4&nbsp;466&nbsp;₽ </span>
                 </div>
-                <div class="accordion__icon"></div>
-              </div>
-
-              <div class="accordion__body">
-                <div class="accordion__item item">
-                  <div class="item__wrap">
-                    <label class="item__checkbox checkbox">
-                      <input type="checkbox" />
-                      <span class="checkbox__decor"></span>
-                    </label>
-                    <a
-                      href="#"
-                      class="item__img"
-                      title="Футболка UZcotton мужская"
-                    >
-                      <img
-                        src="./img/item_01.png"
-                        alt="Футболка UZcotton мужская"
-                      />
-                    </a>
-                  </div>
-
-                  <div class="item__good-info good-info">
-                    <a href="#" class="good-info__title">
-                      <span class="good-info__name">
-                        Силиконовый чехол картхолдер (отверстия) для карт,
-                        прозрачный кейс бампер на Apple iPhone XR, MobiSafe
-                      </span>
-                    </a>
-                    <div class="good-info__properties">
-                      <span class="good-info__item">Цвет: белый</span>
-                      <span class="good-info__item">Размер: 56</span>
-                    </div>
-
-                    <div class="good-info__store">
-                      <span class="good-info__item">Коледино WB</span>
-                    </div>
-                    <div class="good-info__seller">
-                      <span class="good-info__item">OOO Вайлдберриз</span>
-                      <div class="good-info__seller-info seller-info">
-                        <img
-                          class="seller-info__icon"
-                          src="./img/seller-info.svg"
-                        />
-                        <div class="seller-info__popup">
-                          <span class="seller-info__name"
-                            >OOO Вайлдберриз
-                          </span>
-                          <span class="seller-info__registration"
-                            >ОГРН: 5167746237148</span
-                          >
-                          <span class="seller-info__address"
-                            >129337, Москва, улица Красная Сосна, 2, корпус 1,
-                            стр. 1, помещение 2, офис 34</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="item__btn-wrap">
-                    <div class="item__count count">
-                      <button type="button" class="count__minus">−</button>
-                      <input
-                        type="number"
-                        autocomplete="off"
-                        maxlength="3"
-                        min="1"
-                        max="5"
-                        class="count__numeric"
-                        value="1"
-                      />
-                      <button type="button" class="count__plus">+</button>
-                    </div>
-                    <div class="item__limit">Осталось 2 шт.</div>
-                    <div class="item__btn btn">
-                      <button class="btn__postpone" type="button">
-                        <span
-                          >В избранное
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="19"
-                            height="16"
-                            viewBox="0 0 19 16"
-                            fill="none"
-                          >
-                            <path
-                              d="M8.7038 2.12882C8.7978 2.22448 8.9263 2.27836 9.06041 2.27836C9.19453 2.27836 9.32302 2.22448 9.41703 2.12882C10.037 1.49801 11.1892 0.499741 13.0604 0.499741C14.212 0.499741 15.4619 0.874807 16.3615 1.68724C17.261 2.49966 17.8104 3.74962 17.5604 5.49974C17.3104 7.24975 16.1854 8.99974 14.6229 10.6872C13.0604 12.3747 11.0604 13.9997 9.06041 15.4997C7.06042 13.9997 5.06043 12.3747 3.49793 10.6872C1.93545 8.99974 0.810441 7.24975 0.56041 5.49974C0.310364 3.74962 0.859731 2.49966 1.75929 1.68724C2.65885 0.874807 3.90881 0.499741 5.06041 0.499741C6.93163 0.499741 8.08386 1.49801 8.7038 2.12882Z"
-                              stroke="black"
-                              stroke-linejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </button>
-                      <button class="btn__del" type="button">
-                        <span
-                          >Удалить
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
-                              fill="black"
-                            />
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
-                              fill="black"
-                            />
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="item__price">
-                    <span class="item__price-new">1975 ₽</span>
-                    <span class="item__price-old">5000 ₽</span>
-                  </div>
-                </div>
-                <div class="accordion__item item">
-                  <div class="item__wrap">
-                    <label class="item__checkbox checkbox">
-                      <input type="checkbox" />
-                      <span class="checkbox__decor"></span>
-                    </label>
-                    <a
-                      href="#"
-                      class="item__img"
-                      title="Футболка UZcotton мужская"
-                    >
-                      <img
-                        src="./img/item_01.png"
-                        alt="Футболка UZcotton мужская"
-                      />
-                    </a>
-                  </div>
-
-                  <div class="item__good-info good-info">
-                    <a href="#" class="good-info__title">
-                      <span class="good-info__name">
-                        Силиконовый чехол картхолдер (отверстия) для карт,
-                        прозрачный кейс бампер на Apple iPhone XR, MobiSafe
-                      </span>
-                    </a>
-                    <div class="good-info__properties">
-                      <span class="good-info__item">Цвет: белый</span>
-                      <span class="good-info__item">Размер: 56</span>
-                    </div>
-
-                    <div class="good-info__store">
-                      <span class="good-info__item">Коледино WB</span>
-                    </div>
-                    <div class="good-info__seller">
-                      <span class="good-info__item">OOO Вайлдберриз</span>
-                      <div class="good-info__seller-info seller-info">
-                        <img
-                          class="seller-info__icon"
-                          src="./img/seller-info.svg"
-                        />
-                        <div class="seller-info__popup">
-                          <span class="seller-info__name"
-                            >OOO Вайлдберриз
-                          </span>
-                          <span class="seller-info__registration"
-                            >ОГРН: 5167746237148</span
-                          >
-                          <span class="seller-info__address"
-                            >129337, Москва, улица Красная Сосна, 2, корпус 1,
-                            стр. 1, помещение 2, офис 34</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="item__btn-wrap">
-                    <div class="item__count count">
-                      <button type="button" class="count__minus">−</button>
-                      <input
-                        type="number"
-                        autocomplete="off"
-                        maxlength="3"
-                        min="1"
-                        max="5"
-                        class="count__numeric"
-                        value="1"
-                      />
-                      <button type="button" class="count__plus">+</button>
-                    </div>
-                    <div class="item__limit">Осталось 2 шт.</div>
-                    <div class="item__btn btn">
-                      <button class="btn__postpone" type="button">
-                        <span
-                          >В избранное
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="19"
-                            height="16"
-                            viewBox="0 0 19 16"
-                            fill="none"
-                          >
-                            <path
-                              d="M8.7038 2.12882C8.7978 2.22448 8.9263 2.27836 9.06041 2.27836C9.19453 2.27836 9.32302 2.22448 9.41703 2.12882C10.037 1.49801 11.1892 0.499741 13.0604 0.499741C14.212 0.499741 15.4619 0.874807 16.3615 1.68724C17.261 2.49966 17.8104 3.74962 17.5604 5.49974C17.3104 7.24975 16.1854 8.99974 14.6229 10.6872C13.0604 12.3747 11.0604 13.9997 9.06041 15.4997C7.06042 13.9997 5.06043 12.3747 3.49793 10.6872C1.93545 8.99974 0.810441 7.24975 0.56041 5.49974C0.310364 3.74962 0.859731 2.49966 1.75929 1.68724C2.65885 0.874807 3.90881 0.499741 5.06041 0.499741C6.93163 0.499741 8.08386 1.49801 8.7038 2.12882Z"
-                              stroke="black"
-                              stroke-linejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </button>
-                      <button class="btn__del" type="button">
-                        <span
-                          >Удалить
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
-                              fill="black"
-                            />
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
-                              fill="black"
-                            />
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="item__price">
-                    <span class="item__price-new">1975 ₽</span>
-                    <span class="item__price-old">5000 ₽</span>
-                  </div>
+                <div class="accordion__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                    <path
+                      d="M0.658297 8.89926C1.03398 9.2854 1.6523 9.29155 2.03559 8.91297L7.85817 3.16193C7.93658 3.08449 8.06285 3.08506 8.14055 3.16321L13.8472 8.9031C14.2327 9.29089 14.8571 9.30089 15.2548 8.92563V8.92563C15.6645 8.53914 15.6784 7.89206 15.2856 7.48838L8.71674 0.736669C8.32412 0.333117 7.67588 0.333117 7.28326 0.736669L0.658297 7.54602C0.291843 7.92267 0.291843 8.52261 0.658297 8.89926V8.89926Z"
+                      fill="#9797AF" />
+                  </svg>
                 </div>
               </div>
+
+              <div id="accordion_available" class="accordion__body"></div>
             </div>
-            <div class="basket__accordion accordion not-available"></div>
+            <div class="basket__accordion accordion not-available">
+              <div class="accordion__header">
+                <!-- <label class="accordion__checkbox checkbox checkbox_with-text">
+                  <input type="checkbox" />
+                  <span class="checkbox__decor"></span>
+                  <span class="checkbox__text">Выбрать все</span>
+                </label> -->
+
+                <div class="accordion__info">
+                  <span class="accordion__info-title">Отсутствуют</span>
+                  <span class="accordion__count">6 товаров </span>
+                </div>
+                <div class="accordion__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                    <path
+                      d="M0.658297 8.89926C1.03398 9.2854 1.6523 9.29155 2.03559 8.91297L7.85817 3.16193C7.93658 3.08449 8.06285 3.08506 8.14055 3.16321L13.8472 8.9031C14.2327 9.29089 14.8571 9.30089 15.2548 8.92563V8.92563C15.6645 8.53914 15.6784 7.89206 15.2856 7.48838L8.71674 0.736669C8.32412 0.333117 7.67588 0.333117 7.28326 0.736669L0.658297 7.54602C0.291843 7.92267 0.291843 8.52261 0.658297 8.89926V8.89926Z"
+                      fill="#9797AF" />
+                  </svg>
+                </div>
+              </div>
+
+              <div id="accordion_not-available" class="accordion__body"></div>
+            </div>
           </div>
           <div class="basket-form__section">
             <div class="basket-form__delivery"></div>
@@ -384,44 +135,29 @@
 
     <div class="navbar-mobile hide-desktop">
       <a class="navbar-mobile__link" href="#" aria-label="Главная страница">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="29"
-          viewBox="0 0 28 29"
-          fill="none"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M3.39249 13.7635C2.43526 14.7047 3.10172 16.333 4.44418 16.333H4.99997V22.3332C4.99997 23.4378 5.89541 24.3332 6.99997 24.3332H11.25C11.5261 24.3332 11.75 24.1093 11.75 23.8332V20.7433C11.75 19.6387 12.6454 18.7433 13.75 18.7433H14.25C15.3545 18.7433 16.25 19.6387 16.25 20.7433V23.8332C16.25 24.1093 16.4738 24.3332 16.75 24.3332H21C22.1045 24.3332 23 23.4378 23 22.3332V16.333H23.3787C24.7151 16.333 25.3843 14.7173 24.4393 13.7724L14.7012 4.03434C14.313 3.64615 13.6844 3.6435 13.2929 4.02842L3.39249 13.7635Z"
-            fill="#CCCCCC"
-          />
+            fill="#CCCCCC" />
         </svg>
       </a>
 
       <button class="navbar-mobile__link" aria-label="Каталог" type="button">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 28 28"
-          fill="none"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
           <g clip-path="url(#clip0_14_4395)">
             <rect width="28" height="28" fill="white" />
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M19.7961 17.5L22.6846 20.3885C22.7211 20.4251 22.7568 20.4623 22.7914 20.5H26.5C27.3285 20.5 28 19.8284 28 19C28 18.1716 27.3285 17.5 26.5 17.5H19.7961ZM19.6278 8.5C19.2007 7.40358 18.6026 6.39266 17.8662 5.5H26.5C27.3285 5.5 28 6.17157 28 7C28 7.82843 27.3285 8.5 26.5 8.5H19.6278ZM20.3735 12.4867C20.3735 12.1542 20.3587 11.825 20.3298 11.5H26.5C27.3285 11.5 28 12.1716 28 13C28 13.8284 27.3285 14.5 26.5 14.5H20.1891C20.3103 13.8466 20.3735 13.1736 20.3735 12.4867Z"
-              fill="#CCCCCC"
-            />
+              fill="#CCCCCC" />
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M3.8999 12.4867C3.8999 9.45649 6.35639 7 9.38663 7C12.4169 7 14.8734 9.45649 14.8734 12.4867C14.8734 15.517 12.4169 17.9735 9.38663 17.9735C6.35639 17.9735 3.8999 15.517 3.8999 12.4867ZM0.399902 12.4867C0.399902 7.52349 4.4234 3.5 9.38663 3.5C14.3499 3.5 18.3734 7.52349 18.3734 12.4867C18.3734 13.8372 18.0755 15.118 17.5419 16.2672C17.2159 16.9692 17.2875 17.8201 17.8348 18.3674L21.2702 21.8027C21.8872 22.4198 21.8872 23.4202 21.2702 24.0373C20.6531 24.6543 19.6527 24.6543 19.0356 24.0373L15.7116 20.7132C15.1412 20.1428 14.2457 20.0909 13.5301 20.4633C12.2903 21.1087 10.8811 21.4735 9.38663 21.4735C4.4234 21.4735 0.399902 17.45 0.399902 12.4867Z"
-              fill="#CCCCCC"
-            />
+              fill="#CCCCCC" />
           </g>
           <defs>
             <clipPath id="clip0_14_4395">
@@ -431,217 +167,57 @@
         </svg>
       </button>
 
-      <a
-        class="navbar-mobile__link navbar-mobile__link_active"
-        href="#"
-        aria-label="Корзина"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 28 28"
-          fill="none"
-        >
+      <a class="navbar-mobile__link navbar-mobile__link_active" href="#" aria-label="Корзина">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M11.2214 16.9665C11.3829 17.4206 11.8452 17.6949 12.3212 17.619L25.0874 15.5828C25.5004 15.517 25.8288 15.201 25.9106 14.7909L27.2654 7.99865C27.3875 7.38644 26.925 6.81324 26.3008 6.80317L8.94122 6.52324C8.24354 6.51199 7.74913 7.20067 7.98289 7.85812L11.2214 16.9665Z"
-            fill="#CCCCCC"
-          />
+            fill="#CCCCCC" />
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M11.8262 24.8593C13.1109 24.8593 14.1523 23.8178 14.1523 22.5331C14.1523 21.2484 13.1109 20.207 11.8262 20.207C10.5415 20.207 9.5 21.2484 9.5 22.5331C9.5 23.8178 10.5415 24.8593 11.8262 24.8593Z"
-            fill="#CCCCCC"
-          />
+            fill="#CCCCCC" />
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M23.457 24.8593C24.7417 24.8593 25.7831 23.8178 25.7831 22.5331C25.7831 21.2484 24.7417 20.207 23.457 20.207C22.1723 20.207 21.1308 21.2484 21.1308 22.5331C21.1308 23.8178 22.1723 24.8593 23.457 24.8593Z"
-            fill="#CCCCCC"
-          />
+            fill="#CCCCCC" />
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M5 3.5C6.933 3.5 8.5 3.27614 8.5 3C8.5 2.72386 6.933 2.5 5 2.5C3.067 2.5 1.5 2.72386 1.5 3C1.5 3.27614 3.067 3.5 5 3.5Z"
-            fill="#CCCCCC"
-          />
+            fill="#CCCCCC" />
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M2.45442 2.15147C3.1177 2.05672 4.01745 2 5 2C5.98255 2 6.8823 2.05672 7.54558 2.15147C7.87345 2.19831 8.16489 2.25734 8.38495 2.33167C8.4917 2.36772 8.61185 2.41717 8.71511 2.48926C8.80017 2.54864 9 2.71275 9 3C9 3.28725 8.80017 3.45136 8.71511 3.51074C8.61185 3.58283 8.4917 3.63228 8.38495 3.66833C8.16489 3.74266 7.87345 3.80169 7.54558 3.84853C6.8823 3.94328 5.98255 4 5 4C4.01745 4 3.1177 3.94328 2.45442 3.84853C2.12655 3.80169 1.83511 3.74266 1.61505 3.66833C1.5083 3.63228 1.38815 3.58283 1.28489 3.51074C1.19983 3.45136 1 3.28725 1 3C1 2.71275 1.19983 2.54864 1.28489 2.48926C1.38815 2.41717 1.5083 2.36772 1.61505 2.33167C1.83511 2.25734 2.12655 2.19831 2.45442 2.15147Z"
-            fill="#CCCCCC"
-          />
+            fill="#CCCCCC" />
         </svg>
         <span class="navbar-mobile__notify">14</span>
       </a>
       <a class="navbar-mobile__link" href="#" aria-label="Избранные товары">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="29"
-          height="29"
-          viewBox="0 0 29 29"
-          fill="none"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
           <path
             d="M14.9791 23.7496C14.6019 24.0835 14.0344 24.0835 13.6576 23.7491C8.25224 18.9528 3.5 14.2808 3.5 10.3115C3.5 6.94183 6.11818 4.33325 9.50011 4.33325C11.1584 4.33325 12.8167 5.02852 14.007 6.18601C14.2282 6.40108 14.59 6.40108 14.8112 6.18601C16.0015 5.02852 17.6599 4.33325 19.3182 4.33325C22.7 4.33325 25.3182 6.94183 25.3182 10.3115C25.3182 14.2809 20.3979 18.9531 14.9791 23.7496Z"
-            fill="#CCCCCC"
-          />
+            fill="#CCCCCC" />
         </svg>
       </a>
       <a class="navbar-mobile__link" href="#" aria-label="Личный кабинет">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="29"
-          viewBox="0 0 28 29"
-          fill="none"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M2.80005 22.7061C2.80005 23.7739 3.54488 24.3333 5.62764 24.3333H21.9725C24.0552 24.3333 24.8 23.7739 24.8 22.7061C24.8 19.6044 20.5656 15.3333 13.8069 15.3333C7.03453 15.3333 2.80005 19.6044 2.80005 22.7061Z"
-            fill="#CCCCCC"
-          />
+            fill="#CCCCCC" />
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M18.8 8.26675C18.8 11.1204 16.4913 13.3333 13.8001 13.3333C11.1088 13.3333 8.80006 11.1204 8.80006 8.29093C8.78692 5.4977 11.122 3.33325 13.8001 3.33325C16.4781 3.33325 18.8 5.44933 18.8 8.26675Z"
-            fill="#CCCCCC"
-          />
+            fill="#CCCCCC" />
         </svg>
       </a>
     </div>
-
-    <!-- <div class="navbar-mobile hide-desktop">
-      <a class="navbar-mobile__link" href="#" aria-label="Главная страница">
-        <span class="navbar-mobile__icon navbar-mobile__icon-home"></span>
-      </a>
-      <div class="navbar-mobile__wrap">
-        <button class="navbar-mobile__link" aria-label="Каталог" type="button">
-          <span class="navbar-mobile__icon navbar-mobile__icon-catalog"></span>
-        </button>
-      </div>
-      <a class="navbar-mobile__link" href="#" aria-label="Корзина">
-        <span
-          class="navbar-mobile__icon navbar-mobile__icon-basket navbar-mobile__icon_active"
-        >
-          <span class="navbar-mobile__notify">14</span>
-        </span>
-      </a>
-      <a class="navbar-mobile__link" href="#" aria-label="Избранные товары">
-        <span class="navbar-mobile__icon navbar-mobile__icon-favorites"></span>
-      </a>
-      <a class="navbar-mobile__link" href="#" aria-label="Личный кабинет">
-        <span class="navbar-mobile__icon navbar-mobile__icon-profile"> </span>
-      </a>
-    </div> -->
   </body>
 </html>
-
-<!-- <div class="basket-section__basket-list basket-list">
-  <div class="basket-list__accordion accordion">
-    <div class="accordion__header">
-      <label class="accordion__checkbox checkbox-with-text">
-        <input type="checkbox" />
-        <span class="checkbox-with-text__decor"></span>
-        <span class="checkbox-with-text__text">Выбрать все</span>
-      </label>
-
-      <div class="accordion__info">
-        <span class="accordion__count"> 6 товаров </span>
-        <span class="accordion__price"> 4&nbsp;466&nbsp;₽ </span>
-      </div>
-      <div class="accordion__icon"></div>
-    </div>
-
-    <div class="accordion__body" style="display: block">
-      <div class="accordion__list">
-        <div>
-          <div class="accordion__item item">
-            <div class="item__wrap">
-              <label class="item__checkbox checkbox">
-                <input type="checkbox" class="j-cb-include" />
-                <span class="checkbox__decor"></span>
-              </label>
-
-              <div class="item__good">
-                <a
-                  href="/catalog/164301901/detail.aspx?size=273728724"
-                  class="img-plug item__good-img"
-                  title="Перчатки одноразовые нитриловые Safe&amp;Care 50 пар"
-                >
-                  <img
-                    loading="lazy"
-                    src="https://basket-11.wb.ru/vol1643/part164301/164301901/images/c246x328/1.webp"
-                    alt="Перчатки одноразовые нитриловые Safe&amp;Care 50 пар"
-                  />
-
-                  <span class="item__size hide-desktop">S</span>
-                </a>
-                <div class="item__good-info good-info">
-                  <a
-                    href="/catalog/164301901/detail.aspx?size=273728724"
-                    class="good-info__title"
-                  >
-                    <span class="good-info__good-name">
-                      Перчатки одноразовые нитриловые Safe&amp;Care 50 пар
-                    </span>
-                    <span class="good-info__good-brand">, Safe&amp;Care</span>
-                  </a>
-                  <div class="good-info__properties">
-                    <p class="good-info__color">
-                      <span class="good-info__item">черный</span>
-                    </p>
-                    <p class="good-info__size hide-mobile">
-                      <span class="good-info__item">S</span>
-                    </p>
-                  </div>
-                  <div class="good-info__seller seller hide-mobile"></div>
-                  <div
-                    class="good-info__properties good-info__properties--variable"
-                  >
-                    <p class="good-info__store">
-                      <span class="good-info__item">
-                        склад продавца Самара
-                      </span>
-                    </p>
-                  </div>
-                  <div class="good-info__badge-wrap"></div>
-                </div>
-              </div>
-              <div class="item__count count">
-                <div class="count__wrap">
-                  <div class="count__input-number">
-                    <button type="button" class="count__minus minus"></button>
-                    <input
-                      type="number"
-                      autocomplete="off"
-                      maxlength="2"
-                      min="1"
-                      class="in_tb count__numeric ignore"
-                    />
-                    <button type="button" class="count__plus plus"></button>
-                  </div>
-                </div>
-              </div>
-              <div class="item__price">
-                <div class="item__price-new">1&nbsp;975&nbsp;₽</div>
-                <div class="item__price-old">5&nbsp;000&nbsp;₽</div>
-                <div class="item__btn btn">
-                  <button class="btn__postpone" type="button">
-                    <span> В избранное </span>
-                  </button>
-                  <button class="btn__del" type="button">
-                    <span> Удалить </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
