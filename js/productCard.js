@@ -8,10 +8,11 @@ export const items = [
     seller: {
       name: "ООО Вайлдберриз",
       registration: "1067746062449",
-      adress: "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
+      adress:
+        "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
     },
     quantity: 1,
-    availability: 15,
+    availability: 2,
     currency: "сом",
     price: 526,
     originalPrice: 1051,
@@ -50,7 +51,8 @@ export const items = [
     seller: {
       name: "ООО Вайлдберриз",
       registration: "1067746062449",
-      adress: "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
+      adress:
+        "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
     },
     quantity: 2,
     availability: 2,
@@ -72,7 +74,8 @@ export const items = [
     seller: {
       name: "ООО Вайлдберриз",
       registration: "1067746062449",
-      adress: "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
+      adress:
+        "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
     },
     quantity: 1,
     availability: 0,
@@ -114,7 +117,8 @@ export const items = [
     seller: {
       name: "ООО Вайлдберриз",
       registration: "1067746062449",
-      adress: "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
+      adress:
+        "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
     },
     quantity: 2,
     availability: 0,
@@ -140,12 +144,25 @@ export class ProductCard {
 
     const checkboxHtml = this.availability ? this.generateCheckboxHtml() : "";
     const colorHtml = this.item.color ? this.generatePropertyHtml("Цвет", this.item.color) : "";
-    const sizeHtml = this.item.size ? this.generatePropertyHtml("Размер", this.item.size) : "";
+    const sizeHtml = this.item.size
+      ? this.generatePropertyHtml("Размер", this.item.size, "hide-mobile")
+      : "";
+    const sizeMobHtml = this.item.size ? this.generateSizeMobHtml() : "";
+
+    const infoPropertiesHtml =
+      this.item.color || this.item.size
+        ? `<div class="good-info__properties">
+            ${colorHtml}
+            ${sizeHtml}
+          </div>`
+        : "";
+
     const infoStoreHtml = this.availability ? this.generateStoreHtml() : "";
     const infoSellerHtml = this.availability ? this.generateSellerHtml() : "";
     const countHtml = this.availability ? `<div class="item__count count"></div>` : "";
 
-    const limitHtml = this.item.availability < 6 && this.item.availability > 0 ? this.generateLimitHtml() : "";
+    const limitHtml =
+      this.item.availability < 6 && this.item.availability > 0 ? this.generateLimitHtml() : "";
     const priceHtml = this.item.availability > 0 ? this.generatePriceHtml() : "";
 
     card.innerHTML = `
@@ -154,6 +171,7 @@ export class ProductCard {
         <a href="#" class="item__img" title=${this.item.name}>
           <img src=${this.item.imagePath} alt=${this.item.name} />
         </a>
+        ${sizeMobHtml}
       </div>
       
       <div class="item__good-info good-info">
@@ -161,11 +179,8 @@ export class ProductCard {
           <span class="good-info__name">${this.item.name}
           </span>
         </a>
-        <div class="good-info__properties">
-          ${colorHtml}
-          ${sizeHtml}
-        </div>
-      
+
+        ${infoPropertiesHtml}
         ${infoStoreHtml}
         ${infoSellerHtml}
       </div>
@@ -216,9 +231,15 @@ export class ProductCard {
     `;
   }
 
-  generatePropertyHtml(label, value) {
+  generatePropertyHtml(label, value, className = "") {
     return `
-      <span class="good-info__item">${label}: ${value}</span>
+      <span class="good-info__item ${className}">${label}: ${value}</span>
+    `;
+  }
+
+  generateSizeMobHtml() {
+    return `
+      <div class="item__size-mobile hide-desktop">${this.item.size}</div>
     `;
   }
 
@@ -232,10 +253,10 @@ export class ProductCard {
 
   generateSellerHtml() {
     return `
-      <div class="good-info__seller">
+      <div class="good-info__seller hide-mobile">
         <span class="good-info__item">${this.item.seller.name}</span>
         <div class="good-info__seller-info seller-info">
-          <img class="seller-info__icon" src="./img/seller-info.svg" />
+          <span class="seller-info__icon"></span>
           <div class="seller-info__popup">
             <span class="seller-info__name">${this.item.seller.name}</span>
             <span class="seller-info__registration">ОГРН: ${this.item.seller.registration}</span>
@@ -318,7 +339,8 @@ export class ProductCard {
     countBlock.className = "item__count count";
 
     const minusButtonClass = this.item.quantity == 1 ? "count__minus count__limit" : "count__minus";
-    const plusButtonClass = this.item.quantity == this.item.availability ? "count__plus count__limit" : "count__plus";
+    const plusButtonClass =
+      this.item.quantity == this.item.availability ? "count__plus count__limit" : "count__plus";
 
     const minusButton = this.createButton("-", minusButtonClass);
     const numericInput = this.createNumericInput();
@@ -394,11 +416,13 @@ function generatePrice(price, sellerDiscountValue, personalDiscountValue, quanti
   const totalPrice = price * quantity;
   const totalPriceWithDiscount = totalPrice - personalDiscount - sellerDiscount;
 
+  const priceSize = totalPriceWithDiscount < 1000000 ? `style="font-size: 20px;"` : "";
+
   const currency = ` ${curr}`;
 
   const priceNewHtml = `
     <div class="item__price-new">
-      <span>${formatNumberWithSpaces(totalPriceWithDiscount)}</span>
+      <span ${priceSize}>${formatNumberWithSpaces(totalPriceWithDiscount)}</span>
       <span>${currency}</span>
     </div>`;
 
@@ -432,7 +456,13 @@ function updatePrices(number, event) {
   const priceBlock = productCard.querySelector(".item__price");
   const data = priceBlock.querySelector(".item__price-wrap").dataset;
 
-  const newPrice = generatePrice(data.price, data.sellerDiscount, data.personalDiscount, number, data.currency);
+  const newPrice = generatePrice(
+    data.price,
+    data.sellerDiscount,
+    data.personalDiscount,
+    number,
+    data.currency
+  );
   priceBlock.innerHTML = newPrice;
 }
 

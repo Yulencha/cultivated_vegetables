@@ -5,6 +5,7 @@
 @import "_navbar_mobile";
 @import "_basket";
 @import "_basket-form";
+@import "_sidebar";
 
 body {
   display: flex;
@@ -16,6 +17,7 @@ body {
   flex: 1 1 auto;
   background: $smoky;
   padding: 10px 24px 26px;
+  position: relative;
   @media (max-width: 768px) {
     padding: 0 16px;
   }

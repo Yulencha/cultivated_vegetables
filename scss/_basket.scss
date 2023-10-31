@@ -4,16 +4,18 @@
 
 .basket {
   &__title {
+    padding-bottom: 23px;
     font-size: 28px;
     font-weight: 700;
-    line-height: 36px;
-    letter-spacing: -0.28px;
-    margin-bottom: 27px;
+    line-height: 37px;
+    letter-spacing: -0.4px;
+    padding-top: 3px;
     @media (max-width: 768px) {
+      padding: 0;
+      margin-bottom: 16px;
       font-size: 20px;
       line-height: 28px;
       letter-spacing: -0.2px;
-      margin-bottom: 16px;
     }
   }
 
@@ -25,11 +27,7 @@
   &__header {
     padding-bottom: 16px;
     border-bottom: 1px solid $rulers;
-    margin-bottom: 11px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-row-space-b;
   }
 
   &__checkbox {
@@ -37,9 +35,7 @@
   }
 
   &__info {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
+    @include subtitles;
     display: none;
     & span:last-child {
       &::before {
@@ -55,6 +51,7 @@
     cursor: pointer;
     transform-origin: center;
     transition: transform 0.3s;
+    padding: 3px 2px;
     &:hover path {
       fill: $black;
     }
@@ -63,12 +60,13 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 20px;
     transition: height 0.5s;
     // overflow: hidden;
   }
 
   &__item {
+    padding-top: 12px;
   }
 
   &_close {
@@ -90,6 +88,7 @@
 }
 
 .accordion.not-available {
+  margin-top: -5px;
   .accordion {
     &__checkbox {
       display: none;
@@ -116,6 +115,7 @@
   .good-info {
     &__name {
       color: $gray;
+      width: 309px;
     }
 
     &__properties {
@@ -135,18 +135,17 @@
     border-radius: 6px;
     border: 1px solid $rulers_input;
     margin-right: 12px;
+    background: transparent;
   }
   &__text {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+    @include regular_16px;
   }
   &_active {
     .checkbox__decor {
       width: 22px;
       height: 22px;
       border: none;
-      background-image: url(../img/checkbox.svg);
+      background: url(../img/checkbox.svg);
     }
   }
 }
@@ -169,14 +168,52 @@
   // }
 
   &__checkbox {
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      & .checkbox__decor {
+        background: $white;
+      }
+      &.checkbox_active {
+        .checkbox__decor {
+          width: 22px;
+          height: 22px;
+          border: none;
+          background: url(../img/checkbox.svg);
+        }
+      }
+    }
   }
 
   &__wrap {
     display: flex;
     align-items: center;
+    position: relative;
   }
 
   &__img {
+    height: 96px;
+    & img {
+      height: 100%;
+    }
+    @media (max-width: 768px) {
+      height: 106px;
+    }
+  }
+  &__size-mobile {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: $white;
+    @include regular_14px;
+    @include flex-row;
+    justify-content: center;
+    @media (max-width: 768px) {
+      position: absolute;
+      bottom: 4px;
+      left: 4px;
+    }
   }
 
   &__good-info {
@@ -197,9 +234,7 @@
   &__limit {
     width: 100%;
     color: $orange;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 16px;
+    @include regular_13px;
   }
 
   &__btn {
@@ -216,16 +251,12 @@
   }
 
   &__price-new {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
+    @include subtitles-bold;
   }
 
   &__price-old {
     color: $gray;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 16px;
+    @include regular_13px;
     border-bottom: 1px dashed $gray;
     text-decoration: line-through;
     cursor: pointer;
@@ -246,9 +277,7 @@
     border-radius: 8px;
     padding: 11px 16px 13px;
     flex-direction: row;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 16px;
+    @include regular_13px;
     white-space: nowrap;
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
   }
@@ -286,25 +315,23 @@
 
   &__name {
     display: inline-block;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+    @include regular_16px;
     width: 100%;
     color: $black;
+    width: 275px;
+    @media (max-width: 768px) {
+      @include regular_14px;
+    }
   }
 
   &__properties {
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 16px;
+    @include regular_13px;
     display: flex;
     gap: 16px;
   }
 
   &__item {
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 16px;
+    @include regular_13px;
   }
 
   &__store {
@@ -316,6 +343,7 @@
     align-items: center;
     gap: 6px;
     color: $gray;
+    margin-top: -4px;
   }
 
   &__seller-info {
@@ -324,9 +352,15 @@
 
 .seller-info {
   position: relative;
+  height: 16px;
 
   &__icon {
+    display: inline-block;
     cursor: pointer;
+    height: 16px;
+    width: 16px;
+    background-image: url(../img/seller-info.svg);
+    background-position: center;
   }
 
   &__popup {
@@ -342,9 +376,7 @@
     flex-direction: column;
     gap: 8px;
     color: $black;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 16px;
+    @include regular_13px;
     width: 280px;
   }
 
@@ -380,9 +412,7 @@
 
   &__numeric {
     text-align: center;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+    @include regular_16px;
     width: 44px;
   }
 

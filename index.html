@@ -34,8 +34,16 @@
             type="reset"
             aria-label="Очистить поиск"></button>
 
-          <button class="search-catalog__btn search-catalog__btn-search" type="button" aria-label="Поиск товара">
-            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button
+            class="search-catalog__btn search-catalog__btn-search"
+            type="button"
+            aria-label="Поиск товара">
+            <svg
+              width="21"
+              height="21"
+              viewBox="0 0 21 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -65,7 +73,7 @@
       <form class="basket-form">
         <div class="basket-form__content">
           <div class="basket-form__basket basket">
-            <div class="basket__title">Корзина</div>
+            <h1 class="basket__title">Корзина</h1>
             <div class="basket__accordion accordion">
               <div class="accordion__header">
                 <label class="accordion__checkbox checkbox checkbox_with-text">
@@ -80,7 +88,12 @@
                   <span class="accordion__price"> 4&nbsp;466&nbsp;₽ </span>
                 </div>
                 <div class="accordion__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="10"
+                    viewBox="0 0 16 10"
+                    fill="none">
                     <path
                       d="M0.658297 8.89926C1.03398 9.2854 1.6523 9.29155 2.03559 8.91297L7.85817 3.16193C7.93658 3.08449 8.06285 3.08506 8.14055 3.16321L13.8472 8.9031C14.2327 9.29089 14.8571 9.30089 15.2548 8.92563V8.92563C15.6645 8.53914 15.6784 7.89206 15.2856 7.48838L8.71674 0.736669C8.32412 0.333117 7.67588 0.333117 7.28326 0.736669L0.658297 7.54602C0.291843 7.92267 0.291843 8.52261 0.658297 8.89926V8.89926Z"
                       fill="#9797AF" />
@@ -103,7 +116,12 @@
                   <span class="accordion__count">6 товаров </span>
                 </div>
                 <div class="accordion__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="10"
+                    viewBox="0 0 16 10"
+                    fill="none">
                     <path
                       d="M0.658297 8.89926C1.03398 9.2854 1.6523 9.29155 2.03559 8.91297L7.85817 3.16193C7.93658 3.08449 8.06285 3.08506 8.14055 3.16321L13.8472 8.9031C14.2327 9.29089 14.8571 9.30089 15.2548 8.92563V8.92563C15.6645 8.53914 15.6784 7.89206 15.2856 7.48838L8.71674 0.736669C8.32412 0.333117 7.67588 0.333117 7.28326 0.736669L0.658297 7.54602C0.291843 7.92267 0.291843 8.52261 0.658297 8.89926V8.89926Z"
                       fill="#9797AF" />
@@ -114,18 +132,305 @@
               <div id="accordion_not-available" class="accordion__body"></div>
             </div>
           </div>
-          <div class="basket-form__section">
-            <div class="basket-form__delivery"></div>
+
+          <div class="basket-form__basket-section basket-section basket-delivery">
+            <!-- Header section -->
+            <div class="basket-section__header">
+              <h2 class="basket-section__title">Способ доставки</h2>
+              <button class="basket-section__btn-change btn-change_delivery">Изменить</button>
+            </div>
+
+            <!-- Pickup point section -->
+            <!-- <div class="basket-delivery__pickup"> -->
+            <span class="basket-delivery__pickup-label">Пункт выдачи</span>
+
+            <div class="basket-delivery__pickup-wrap">
+              <span class="basket-delivery__pickup-address">
+                Бишкек, улица Ахматбека Суюмбаева, 12/1
+              </span>
+
+              <div class="basket-delivery__pickup-info">
+                <img class="basket-delivery__star-icon" src="./img/star_fill.svg" />
+                <span class="basket-delivery__rating">4.99</span>
+                <span class="basket-delivery__work-time">Ежедневно с 10 до 21</span>
+              </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- Delivery cost section -->
+            <!-- <div class="basket-delivery__cost"> -->
+            <span class="basket-delivery__cost-label">Стомость доставки</span>
+            <span class="basket-delivery__cost-value">Бесплатно</span>
+            <!-- </div> -->
+
+            <!-- Products with delivery dates section -->
+            <!-- <div class="basket-delivery__products"> -->
+            <!-- <div class="basket-delivery__product-date"> -->
+            <span class="basket-delivery__date-range">5–6 февраля</span>
+            <div class="basket-delivery__products-list">
+              <div class="basket-delivery__product">
+                <img
+                  src="./img/item_01.png"
+                  alt="Описание продукта"
+                  class="basket-delivery__product-image" />
+                <span class="basket-delivery__product-count">1</span>
+              </div>
+              <div class="basket-delivery__product">
+                <img
+                  src="./img/item_02.png"
+                  alt="Описание продукта"
+                  class="basket-delivery__product-image" />
+                <span class="basket-delivery__product-count">184</span>
+              </div>
+              <div class="basket-delivery__product">
+                <img
+                  src="./img/item_03.png"
+                  alt="Описание продукта"
+                  class="basket-delivery__product-image" />
+                <span class="basket-delivery__product-count">2</span>
+              </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- <div class="basket-delivery__product-date"> -->
+            <span class="basket-delivery__date-range">7–8 февраля</span>
+            <div class="basket-delivery__products-list">
+              <div class="basket-delivery__product">
+                <img
+                  src="./img/item_02.png"
+                  alt="Описание продукта"
+                  class="basket-delivery__product-image" />
+                <span class="basket-delivery__product-count">16</span>
+              </div>
+            </div>
+            <!-- </div> -->
+            <!-- </div> -->
+
+            <!-- Return policy section -->
+            <div class="basket-delivery__return-policy">
+              <img class="basket-delivery__return-icon" src="./img/price_shipping.svg" />
+              <span class="basket-delivery__return-text"
+                >Обратная доставка товаров на склад при отказе —
+                <a href="#" class="basket-delivery__return-link">бесплатно</a></span
+              >
+            </div>
           </div>
-          <div class="basket-form__section">
-            <div class="basket-form__payment"></div>
+
+          <div class="basket-form__basket-section basket-section basket-payment">
+            <!-- Header section -->
+            <div class="basket-section__header">
+              <h2 class="basket-section__title">Способ оплаты</h2>
+              <button class="basket-section__btn-change btn-change_payment">Изменить</button>
+            </div>
+
+            <div class="basket-payment__card">
+              <img src="./img/mir.svg" alt="Логотип МИР" />
+              <span class="basket-payment__card-details">1234 12•• •••• 1234</span>
+              <span class="basket-payment__card-expired">01/30</span>
+            </div>
+            <div class="basket-payment__payment-info">Спишем оплату с карты при получении</div>
           </div>
-          <div class="basket-form__section">
-            <div class="basket-form__recipient"></div>
+
+          <div class="basket-form__basket-section basket-section basket-recipient">
+            <!-- Header section -->
+            <div class="basket-section__header">
+              <h2 class="basket-section__title">Получатель</h2>
+            </div>
+
+            <div class="basket-recipient__input-wrap">
+              <!-- Name -->
+              <div class="basket-recipient__input-group">
+                <label for="recipient-name" class="basket-recipient__label">Имя</label>
+                <input
+                  type="text"
+                  id="recipient-name"
+                  name="recipient-name"
+                  class="basket-recipient__input"
+                  placeholder="Имя" />
+                <span class="basket-recipient__error" id="recipient-name-error">Укажите имя</span>
+              </div>
+
+              <!-- Surname -->
+              <div class="basket-recipient__input-group">
+                <label for="recipient-surname" class="basket-recipient__label">Фамилия</label>
+                <input
+                  type="text"
+                  id="recipient-surname"
+                  name="recipient-surname"
+                  class="basket-recipient__input"
+                  placeholder="Фамилия" />
+                <span class="basket-recipient__error" id="recipient-surname-error"
+                  >Укажите фамилию</span
+                >
+              </div>
+            </div>
+
+            <div class="basket-recipient__input-wrap">
+              <!-- Email -->
+              <div class="basket-recipient__input-group">
+                <label for="recipient-email" class="basket-recipient__label">Почта</label>
+                <input
+                  type="email"
+                  id="recipient-email"
+                  name="recipient-email"
+                  class="basket-recipient__input"
+                  placeholder="Почта" />
+                <span class="basket-recipient__error" id="recipient-email-error"></span>
+              </div>
+
+              <!-- Phone -->
+              <div class="basket-recipient__input-group">
+                <label for="recipient-phone" class="basket-recipient__label">Телефон</label>
+                <input
+                  type="tel"
+                  id="recipient-phone"
+                  name="recipient-phone"
+                  class="basket-recipient__input"
+                  placeholder="Телефон" />
+                <span class="basket-recipient__error" id="recipient-phone-error"></span>
+              </div>
+
+              <!-- VIN / ИНН -->
+              <div class="basket-recipient__input-group">
+                <label for="recipient-vin" class="basket-recipient__label">ИНН</label>
+                <input
+                  type="text"
+                  id="recipient-vin"
+                  name="recipient-vin"
+                  class="basket-recipient__input"
+                  placeholder="ИНН" />
+                <span class="basket-recipient__error" id="recipient-vin-error"
+                  >Для таможенного оформления</span
+                >
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="basket-form__sidebar sidebar"></div>
+        <div class="basket-form__sidebar-wrap">
+          <div class="basket-form__sidebar sidebar">
+            <div class="sidebar__price-block">
+              <div class="sidebar__new-price">
+                <h2>Итого</h2>
+                <div class="sidebar__new-price-value">
+                  <span>2 101 063 </span>
+                  <span>сом</span>
+                </div>
+              </div>
+              <div class="sidebar__price">
+                <span>203 товара</span>
+                <div class="sidebar__price-value">
+                  <span>2 501 555 </span>
+                  <span>сом</span>
+                </div>
+              </div>
+              <div class="sidebar__discount">
+                <span>Скидка</span>
+                <div class="sidebar__discount-value">
+                  <span>-401 555 </span>
+                  <span>сом</span>
+                </div>
+              </div>
+              <div class="sidebar__delivery-price">
+                <span>Доставка</span>
+                <span>Бесплатно</span>
+              </div>
+            </div>
+            <div class="sidebar__delivery delivery">
+              <div class="delivery__type">
+                <span>Доставка в пункт выдачи</span>
+                <button class="btn-change_delivery">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.1585 3.05991L16.9401 6.84154L6.72705 17.0546L2.73544 17.8529C2.38557 17.9229 2.07711 17.6144 2.14709 17.2646L2.94541 13.273L13.1585 3.05991ZM4.17707 13.9321L13.1585 4.95072L15.0493 6.84154L6.06789 15.8229L3.70436 16.2956L4.17707 13.9321Z"
+                      fill="#CB11AB" />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M15.9948 7.78715L12.2132 4.00552L13.6313 2.5874C14.4145 1.8042 15.6843 1.8042 16.4675 2.5874L17.4129 3.53281C18.1961 4.31601 18.1961 5.58584 17.4129 6.36904L15.9948 7.78715ZM16.4675 5.42363C16.7286 5.16256 16.7286 4.73929 16.4675 4.47822L15.5221 3.53281C15.261 3.27174 14.8378 3.27174 14.5767 3.53281L14.104 4.00552L15.9948 5.89634L16.4675 5.42363Z"
+                      fill="#CB11AB" />
+                  </svg>
+                </button>
+              </div>
+              <div class="delivery__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
+              <div class="delivery__days"><span>5–8 фев</span></div>
+              <div class="delivery__conditions">
+                <img src="./img/price_shipping.svg" />
+                <span
+                  >Обратная доставка товаров на склад при отказе —<a
+                    class="delivery__conditions-link"
+                    href="#"
+                    >бесплатно</a
+                  ></span
+                >
+              </div>
+            </div>
+            <div class="sidebar__payment payment">
+              <div class="payment__type">
+                <span>Оплата картой</span>
+                <button class="btn-change_payment">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.1585 3.05991L16.9401 6.84154L6.72705 17.0546L2.73544 17.8529C2.38557 17.9229 2.07711 17.6144 2.14709 17.2646L2.94541 13.273L13.1585 3.05991ZM4.17707 13.9321L13.1585 4.95072L15.0493 6.84154L6.06789 15.8229L3.70436 16.2956L4.17707 13.9321Z"
+                      fill="#CB11AB" />
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M15.9948 7.78715L12.2132 4.00552L13.6313 2.5874C14.4145 1.8042 15.6843 1.8042 16.4675 2.5874L17.4129 3.53281C18.1961 4.31601 18.1961 5.58584 17.4129 6.36904L15.9948 7.78715ZM16.4675 5.42363C16.7286 5.16256 16.7286 4.73929 16.4675 4.47822L15.5221 3.53281C15.261 3.27174 14.8378 3.27174 14.5767 3.53281L14.104 4.00552L15.9948 5.89634L16.4675 5.42363Z"
+                      fill="#CB11AB" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="payment__chosen">
+                <img src="./img/mir.svg" alt="" />
+                <span>1234 12•• •••• 1234</span>
+              </div>
+
+              <div class="payment__options">
+                <label class="payment__checkbox checkbox checkbox_with-text">
+                  <input type="checkbox" />
+                  <span class="checkbox__decor"></span>
+                  <span class="checkbox__text">Списать оплату сразу</span>
+                </label>
+                <span class="payment__text">Спишем оплату с карты при получении</span>
+              </div>
+            </div>
+            <div class="sidebar__order">
+              <button class="sidebar__order-btn">Заказать</button>
+              <div class="sidebar__agreement">
+                <img src="./img/check.svg" />
+                <!-- <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="13"
+                  height="24"
+                  viewBox="0 0 13 24"
+                  fill="none">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.7657 4.68031L4.59586 13.4814L0.257324 8.66919L1.74276 7.32998L4.6174 10.5185L11.2999 3.31964L12.7657 4.68031Z"
+                    fill="black" />
+                </svg> -->
+                <span>Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     </main>
 
@@ -135,7 +440,12 @@
 
     <div class="navbar-mobile hide-desktop">
       <a class="navbar-mobile__link" href="#" aria-label="Главная страница">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="29"
+          viewBox="0 0 28 29"
+          fill="none">
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
@@ -145,7 +455,12 @@
       </a>
 
       <button class="navbar-mobile__link" aria-label="Каталог" type="button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 28 28"
+          fill="none">
           <g clip-path="url(#clip0_14_4395)">
             <rect width="28" height="28" fill="white" />
             <path
@@ -168,7 +483,12 @@
       </button>
 
       <a class="navbar-mobile__link navbar-mobile__link_active" href="#" aria-label="Корзина">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 28 28"
+          fill="none">
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
@@ -198,14 +518,24 @@
         <span class="navbar-mobile__notify">14</span>
       </a>
       <a class="navbar-mobile__link" href="#" aria-label="Избранные товары">
-        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="29"
+          height="29"
+          viewBox="0 0 29 29"
+          fill="none">
           <path
             d="M14.9791 23.7496C14.6019 24.0835 14.0344 24.0835 13.6576 23.7491C8.25224 18.9528 3.5 14.2808 3.5 10.3115C3.5 6.94183 6.11818 4.33325 9.50011 4.33325C11.1584 4.33325 12.8167 5.02852 14.007 6.18601C14.2282 6.40108 14.59 6.40108 14.8112 6.18601C16.0015 5.02852 17.6599 4.33325 19.3182 4.33325C22.7 4.33325 25.3182 6.94183 25.3182 10.3115C25.3182 14.2809 20.3979 18.9531 14.9791 23.7496Z"
             fill="#CCCCCC" />
         </svg>
       </a>
       <a class="navbar-mobile__link" href="#" aria-label="Личный кабинет">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="29"
+          viewBox="0 0 28 29"
+          fill="none">
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"

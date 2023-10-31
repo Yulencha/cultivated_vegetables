@@ -1,0 +1,148 @@
+@import "_variables";
+
+/*sidebar*/
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__price-block {
+    @include regular_16px;
+  }
+
+  &__new-price {
+    @include flex-row-space-b;
+    @include titles;
+    padding-bottom: 8px;
+  }
+
+  &__new-price-value span:last-child {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+  }
+
+  &__price {
+    @include flex-row-space-b;
+  }
+
+  &__price-value {
+  }
+
+  &__discount {
+    @include flex-row-space-b;
+  }
+
+  &__discount-value {
+  }
+
+  &__delivery-price {
+    @include flex-row-space-b;
+  }
+
+  &__delivery {
+  }
+
+  &__payment {
+  }
+
+  &__order {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__order-btn {
+    height: 44px;
+    padding-bottom: 5px;
+    width: 100%;
+    background: $accent;
+    border-radius: 8px;
+    @include subtitles;
+    color: $white;
+  }
+
+  &__agreement {
+    @include regular_13px;
+    display: flex;
+    gap: 8px;
+  }
+}
+.delivery {
+  @include regular_13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  &__type {
+    @include flex-row-space-b;
+    @include subtitles-bold;
+    @media (max-width: 768px) {
+      @include subtitles;
+    }
+  }
+
+  &__address {
+  }
+
+  &__days span {
+    color: $accent;
+    border-bottom: 1px dashed rgba(203, 17, 171, 0.2);
+  }
+
+  &__conditions {
+    margin-top: 8px;
+    padding: 8px 8px 12px 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: $smoky;
+  }
+
+  &__conditions-link {
+    color: $green;
+    border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
+  }
+}
+.payment {
+  @include regular_13px;
+
+  &__type {
+    @include subtitles-bold;
+    @include flex-row-space-b;
+    margin-bottom: 4px;
+    @media (max-width: 768px) {
+      @include subtitles;
+    }
+  }
+
+  &__chosen {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 24px;
+  }
+
+  &__options {
+    padding: 8px 8px 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 8px;
+    background: $smoky;
+  }
+
+  &__checkbox {
+    & .checkbox__text {
+      @include regular_13px;
+    }
+  }
+
+  &__text {
+  }
+}
+
+/*--------------------*/
