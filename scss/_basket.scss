@@ -21,6 +21,9 @@
 
   &__accordion {
     margin-bottom: 40px;
+    @media (max-width: 768px) {
+      margin-bottom: 48px;
+    }
   }
 }
 .accordion {
@@ -28,6 +31,9 @@
     padding-bottom: 16px;
     border-bottom: 1px solid $rulers;
     @include flex-row-space-b;
+    @media (max-width: 768px) {
+      border-bottom: none;
+    }
   }
 
   &__checkbox {
@@ -63,10 +69,16 @@
     gap: 20px;
     transition: height 0.5s;
     // overflow: hidden;
+    @media (max-width: 768px) {
+      gap: 16px;
+    }
   }
 
   &__item {
     padding-top: 12px;
+    @media (max-width: 768px) {
+      border-top: 1px solid $rulers;
+    }
   }
 
   &_close {
@@ -89,6 +101,10 @@
 
 .accordion.not-available {
   margin-top: -5px;
+  @media (max-width: 768px) {
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
   .accordion {
     &__checkbox {
       display: none;
@@ -113,13 +129,23 @@
     }
   }
   .good-info {
+    @media (max-width: 768px) {
+      grid-area: B;
+    }
+
     &__name {
       color: $gray;
-      width: 309px;
+      max-width: 309px;
     }
 
     &__properties {
       color: $gray;
+    }
+  }
+
+  .item__btn-wrap {
+    @media (max-width: 768px) {
+      justify-content: flex-end;
     }
   }
 }
@@ -155,17 +181,22 @@
 }
 
 .item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 106px auto 100px 110px;
   align-items: flex-start;
   gap: 16px;
   &:hover &__btn {
     opacity: 1;
   }
-  // &:last-child .seller-info__popup {
-  //   top: 0;
-  //   left: 25px;
-  //   transform: translateY(-100%);
-  // }
+  @media (max-width: 768px) {
+    grid-template-columns: 80px auto;
+    grid-template-areas:
+      "A B  "
+      "A C "
+      "D D ";
+    column-gap: 16px;
+    row-gap: 0;
+  }
 
   &__checkbox {
     @media (max-width: 768px) {
@@ -190,6 +221,9 @@
     display: flex;
     align-items: center;
     position: relative;
+    @media (max-width: 768px) {
+      grid-area: A;
+    }
   }
 
   &__img {
@@ -217,7 +251,9 @@
   }
 
   &__good-info {
-    flex: 1;
+    @media (max-width: 768px) {
+      grid-area: C;
+    }
   }
 
   &__btn-wrap {
@@ -225,7 +261,14 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 8px;
-    width: 100px;
+
+    @media (max-width: 768px) {
+      @include flex-row-space-b;
+      gap: 0;
+      grid-area: D;
+      padding-top: 12px;
+      // grid-column: span 2;
+    }
   }
 
   &__count {
@@ -235,6 +278,10 @@
     width: 100%;
     color: $orange;
     @include regular_13px;
+    display: inline-flex;
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
   }
 
   &__btn {
@@ -247,14 +294,26 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 5px;
-    width: 110px;
+
+    @media (max-width: 768px) {
+      grid-area: B;
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__price-new {
     @include subtitles-bold;
+    &_big {
+      font-size: 20px;
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+    }
   }
 
   &__price-old {
+    display: inline-flex;
     color: $gray;
     @include regular_13px;
     border-bottom: 1px dashed $gray;
@@ -316,11 +375,15 @@
   &__name {
     display: inline-block;
     @include regular_16px;
-    width: 100%;
     color: $black;
-    width: 275px;
+    max-width: 275px;
+
     @media (max-width: 768px) {
       @include regular_14px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
   }
 
@@ -408,6 +471,7 @@
     width: 24px;
     padding: 2px 7px 6px 8px;
     background: $white;
+    font-size: 20px;
   }
 
   &__numeric {
@@ -420,6 +484,7 @@
     width: 24px;
     padding: 2px 7px 6px 8px;
     background: $white;
+    font-size: 20px;
   }
 
   &__limit {
@@ -431,11 +496,23 @@
   &__numeric::-webkit-inner-spin-button {
     display: none;
   }
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 32px;
+    &__numeric {
+      @include regular_14px;
+      width: 32px;
+    }
+  }
 }
 
 .btn {
   display: flex;
   gap: 16px;
+  @media (max-width: 768px) {
+    gap: 24px;
+    padding-right: 12px;
+  }
   & span {
     font-size: 0;
   }

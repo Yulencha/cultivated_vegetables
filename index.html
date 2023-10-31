@@ -337,7 +337,7 @@
               </div>
             </div>
             <div class="sidebar__delivery delivery">
-              <div class="delivery__type">
+              <div class="delivery__type hide-mobile">
                 <span>Доставка в пункт выдачи</span>
                 <button class="btn-change_delivery">
                   <svg
@@ -359,8 +359,10 @@
                   </svg>
                 </button>
               </div>
-              <div class="delivery__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
-              <div class="delivery__days"><span>5–8 фев</span></div>
+              <div class="delivery__address hide-mobile">
+                Бишкек, улица Ахматбека Суюмбаева, 12/1
+              </div>
+              <div class="delivery__days hide-mobile"><span>5–8 фев</span></div>
               <div class="delivery__conditions">
                 <img src="./img/price_shipping.svg" />
                 <span
@@ -373,7 +375,7 @@
               </div>
             </div>
             <div class="sidebar__payment payment">
-              <div class="payment__type">
+              <div class="payment__typ hide-mobile">
                 <span>Оплата картой</span>
                 <button class="btn-change_payment">
                   <svg
@@ -396,7 +398,7 @@
                 </button>
               </div>
 
-              <div class="payment__chosen">
+              <div class="payment__chosen hide-mobile">
                 <img src="./img/mir.svg" alt="" />
                 <span>1234 12•• •••• 1234</span>
               </div>
@@ -414,18 +416,6 @@
               <button class="sidebar__order-btn">Заказать</button>
               <div class="sidebar__agreement">
                 <img src="./img/check.svg" />
-                <!-- <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="13"
-                  height="24"
-                  viewBox="0 0 13 24"
-                  fill="none">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12.7657 4.68031L4.59586 13.4814L0.257324 8.66919L1.74276 7.32998L4.6174 10.5185L11.2999 3.31964L12.7657 4.68031Z"
-                    fill="black" />
-                </svg> -->
                 <span>Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
               </div>
             </div>
@@ -549,5 +539,31 @@
         </svg>
       </a>
     </div>
+
+    <!-- <div class="payment-popup">
+      <div class="payment-popup__header">
+          <h2>Способ оплаты</h2>
+          <button class="payment-popup__close-btn">X</button>
+      </div>
+      <form class="payment-popup__form">
+          <div class="payment-option">
+              <input type="radio" id="mcard" name="payment-method" class="payment-option__input">
+              <label for="mcard" class="payment-option__label">
+                  <span class="payment-option__logo mcard-logo"></span>
+                  1234 56** **** 1234
+              </label>
+          </div>
+          <div class="payment-option">
+              <input type="radio" id="visa" name="payment-method" class="payment-option__input">
+              <label for="visa" class="payment-option__label">
+                  <span class="payment-option__logo visa-logo"></span>
+                  1234 56** **** 1234
+              </label>
+          </div>
+          
+          <button type="submit" class="payment-popup__submit-btn">Выбрать</button>
+      </form>
+  </div>
+   -->
   </body>
 </html>

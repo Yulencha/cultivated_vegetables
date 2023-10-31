@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
 
   &__price-block {
     @include regular_16px;
@@ -99,6 +102,10 @@
     gap: 8px;
     border-radius: 8px;
     background: $smoky;
+    @media (max-width: 768px) {
+      background: $smoky-dark;
+      margin-top: 0;
+    }
   }
 
   &__conditions-link {
@@ -133,6 +140,10 @@
     gap: 8px;
     border-radius: 8px;
     background: $smoky;
+    @media (max-width: 768px) {
+      background: $smoky-dark;
+      margin-bottom: 8px;
+    }
   }
 
   &__checkbox {

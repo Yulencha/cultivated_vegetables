@@ -16,10 +16,10 @@ body {
 .main {
   flex: 1 1 auto;
   background: $smoky;
-  padding: 10px 24px 26px;
   position: relative;
+  padding: 10px 0 26px;
   @media (max-width: 768px) {
-    padding: 0 16px;
+    padding: 0;
   }
 }
 .hide-mobile {

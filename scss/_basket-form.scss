@@ -9,8 +9,16 @@
   color: $black;
   max-width: 1504px;
   margin: 0 auto;
+  padding: 0 24px;
+
   @media (max-width: 1023px) {
     flex-direction: column;
+  }
+  @media (max-width: 768px) {
+    position: relative;
+    top: -10px;
+    padding: 0 16px;
+    gap: 16px;
   }
 
   &__content {
@@ -23,29 +31,27 @@
     background: $white;
     border-radius: 16px;
     padding: 16px 24px 24px 24px;
-    width: 100%;
-
+    // width: 100%;
     margin-bottom: 16px;
     &:last-child {
       margin-bottom: 0;
     }
-  }
 
-  &__basket {
-  }
-
-  &__delivery {
-  }
-
-  &__payment {
-  }
-
-  &__recipient {
+    @media (max-width: 768px) {
+      margin-left: -16px;
+      margin-right: -16px;
+      padding: 16px 16px 24px 16px;
+    }
   }
 
   &__sidebar-wrap {
     position: relative;
     top: -10px;
+    @media (max-width: 768px) {
+      top: auto;
+      margin-left: -16px;
+      margin-right: -16px;
+    }
   }
 
   &__sidebar {
@@ -60,6 +66,10 @@
 
     @media (max-width: 1023px) {
       width: 100%;
+    }
+    @media (max-width: 768px) {
+      padding: 5px 16px 6px 16px;
+      background: transparent;
     }
   }
 }
@@ -93,8 +103,16 @@
   row-gap: 16px;
   column-gap: 28px;
   grid-template-columns: 157px auto;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
   & .basket-section__header {
     grid-area: A;
+    @media (max-width: 768px) {
+      padding-bottom: 8px;
+    }
   }
 
   &__pickup {
@@ -102,8 +120,6 @@
   }
 
   &__pickup-label {
-    // width: 157px;
-    // padding-right: 28px;
     @include subtitles;
     grid-area: B;
   }
@@ -113,6 +129,9 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+    @media (max-width: 768px) {
+      padding-bottom: 16px;
+    }
   }
 
   &__pickup-address {
@@ -140,8 +159,6 @@
   }
 
   &__cost-label {
-    // width: 157px;
-    // padding-right: 28px;
     @include subtitles;
     grid-area: D;
   }
@@ -149,6 +166,9 @@
   &__cost-value {
     grid-area: E;
     @include regular_16px;
+    @media (max-width: 768px) {
+      padding-bottom: 16px;
+    }
   }
 
   &__products {
@@ -159,14 +179,18 @@
   }
 
   &__date-range {
-    // width: 157px;
-    // padding-right: 28px;
     @include subtitles;
+    @media (max-width: 768px) {
+      padding-bottom: 12px;
+    }
   }
 
   &__products-list {
     @include flex-row;
     gap: 8px;
+    @media (max-width: 768px) {
+      padding-bottom: 24px;
+    }
   }
 
   &__product {
@@ -199,6 +223,9 @@
     grid-column: span 2;
     @include flex-row;
     gap: 8px;
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
   }
 
   &__return-icon {
@@ -222,6 +249,9 @@
 .basket-payment {
   & .basket-section__header {
     padding-bottom: 16px;
+    @media (max-width: 768px) {
+      padding-bottom: 8px;
+    }
   }
   &__card {
     @include flex-row;
@@ -257,6 +287,9 @@
     @include flex-row-space-b;
     gap: 24px;
     max-width: 700px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &__input-group {

@@ -409,6 +409,7 @@ function formatNumberWithSpaces(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0");
 }
 
+// Генерация блока с ценой для каждого товара
 function generatePrice(price, sellerDiscountValue, personalDiscountValue, quantity, curr) {
   const personalDiscount = Math.round(((personalDiscountValue * price) / 100) * quantity);
   const sellerDiscount = Math.round(((sellerDiscountValue * price) / 100) * quantity);
@@ -416,13 +417,13 @@ function generatePrice(price, sellerDiscountValue, personalDiscountValue, quanti
   const totalPrice = price * quantity;
   const totalPriceWithDiscount = totalPrice - personalDiscount - sellerDiscount;
 
-  const priceSize = totalPriceWithDiscount < 1000000 ? `style="font-size: 20px;"` : "";
+  const priceSize = totalPriceWithDiscount < 1000000 ? "item__price-new_big" : "";
 
   const currency = ` ${curr}`;
 
   const priceNewHtml = `
     <div class="item__price-new">
-      <span ${priceSize}>${formatNumberWithSpaces(totalPriceWithDiscount)}</span>
+      <span class=${priceSize}>${formatNumberWithSpaces(totalPriceWithDiscount)}</span>
       <span>${currency}</span>
     </div>`;
 
