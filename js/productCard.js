@@ -140,7 +140,7 @@ export class ProductCard {
 
   generateCard() {
     const card = document.createElement("div");
-    card.className = "accordion__item item";
+    card.className = "item accordion__item";
 
     const checkboxHtml = this.availability ? this.generateCheckboxHtml() : "";
     const colorHtml = this.item.color ? this.generatePropertyHtml("Цвет", this.item.color) : "";

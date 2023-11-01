@@ -70,14 +70,15 @@ const radioInputs = document.querySelectorAll(".radio-input__input");
 radioInputs.forEach((radioInput) => {
   radioInput.addEventListener("change", () => updateRadioDisplay(radioInput));
 
-  updateRadioDisplay(radioInput);
+  if (radioInput.checked) {
+    updateRadioDisplay(radioInput);
+  }
 });
 
 // Логика для открытия/закрытия popup
 
 const popupLinks = document.querySelectorAll(".popup-link");
 const body = document.body;
-const lockPadding = document.querySelectorAll(".lock-padding");
 const popupCloseIcons = document.querySelectorAll(".close-popup");
 
 let unlock = true;
@@ -106,14 +107,6 @@ function popupClose(popup, doUnlock = true) {
 }
 
 function bodyLock() {
-  // const lockPaddingValue =
-  //   window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
-  // if (lockPadding > 0) {
-  //   lockPadding.forEach((el) => {
-  //     el.style.paddingRight = lockPaddingValue;
-  //   });
-  // }
-  // body.style.paddingRight = lockPaddingValue;
   body.classList.add("lock");
 
   unlock = false;
@@ -124,12 +117,6 @@ function bodyLock() {
 
 function bodyUnLock() {
   setTimeout(() => {
-    // if (lockPadding > 0) {
-    //   lockPadding.forEach((el) => {
-    //     el.style.paddingRight = "0px";
-    //   });
-    // }
-    // body.style.paddingRight = "0px";
     body.classList.remove("lock");
   }, timeout);
   unlock = false;
@@ -158,25 +145,18 @@ if (popupLinks.length > 0) {
 
 // Обработка выбранных данных в payment-popup
 
-document.querySelector(".payment-popup__submit-btn").addEventListener("click", function (event) {
-  event.preventDefault(); // Предотвращение отправки формы
+document.querySelector(".popup__submit-btn_payment").addEventListener("click", function (event) {
+  event.preventDefault();
 
-  // Получить выбранное значение
   let selectedInput = document.querySelector('input[name="payment-method"]:checked');
-
   let inputBlock = selectedInput.closest(".payment-option__radio-input");
-
-  let cardAbsoluteUrl = inputBlock.querySelector(".payment-option__card-img").src; // Изображение карты
+  let cardAbsoluteUrl = inputBlock.querySelector(".payment-option__card-img").src;
   let urlObj = new URL(cardAbsoluteUrl);
   let cardRelativePath = "." + urlObj.pathname;
-  let cardNumber = inputBlock.querySelector(".payment-option__card-details").textContent; // Номер карты
-  let cardExpiry = inputBlock.querySelector(".payment-option__card-expired").textContent; // Срок действия карты
+  let cardNumber = inputBlock.querySelector(".payment-option__card-details").textContent;
+  let cardExpiry = inputBlock.querySelector(".payment-option__card-expired").textContent;
 
-  // console.log(cardRelativePath);
-  // console.log(cardNumber);
-  // console.log(cardExpiry);
-  // Замена содержимого в других элементах .
-
+  // Поиски и замена данных на странице
   let sidebarPaymentElement = document.querySelector(".payment__chosen");
   let sidebarImg = sidebarPaymentElement.querySelector("img");
   let sidebarText = sidebarPaymentElement.querySelector("span");
@@ -195,4 +175,88 @@ document.querySelector(".payment-popup__submit-btn").addEventListener("click", f
 
   const popupActive = document.querySelector(".overlay.open");
   popupClose(popupActive);
+});
+
+// Переключение вида доставки в delivery-popup
+
+let tabsSwitchInputs = document.querySelectorAll(".tabs-switch__input");
+let selfDeliveryWrap = document.querySelector(".delivery-option__wrap_self");
+let courierDeliveryWrap = document.querySelector(".delivery-option__wrap_courier");
+let tabsSwitchItems = document.querySelectorAll(".tabs-switch__item");
+
+tabsSwitchInputs.forEach((input) => {
+  input.addEventListener("change", function () {
+    // Проверяем, какой радио-инпут выбран
+    if (input.value === "self") {
+      selfDeliveryWrap.style.display = "flex";
+      courierDeliveryWrap.style.display = "none";
+    } else if (input.value === "courier") {
+      courierDeliveryWrap.style.display = "flex";
+      selfDeliveryWrap.style.display = "none";
+    }
+
+    tabsSwitchItems.forEach((item) => item.classList.remove("tabs-switch__item_active"));
+    input.parentElement.classList.add("tabs-switch__item_active");
+  });
+});
+
+// Обработка выбранных данных в delivery-popup
+
+document.querySelector(".popup__submit-btn_delivery").addEventListener("click", function (event) {
+  event.preventDefault();
+
+  let selectedDeliveryInput = document.querySelector(".tabs-switch__input:checked");
+  let pickupLabel = document.querySelector(".basket-delivery__pickup-label");
+  let deliveryType = document.querySelector(".delivery__type span");
+  let addressInBasket = document.querySelector(".basket-delivery__pickup-address");
+  let addressInDelivery = document.querySelector(".delivery__address");
+  let pickupInfo = document.querySelector(".basket-delivery__pickup-info");
+  let ratingInBasket = document.querySelector(".basket-delivery__rating");
+
+  let selectedDeliveryAddressElement = document
+    .querySelector('input[name="delivery-method"]:checked')
+    .closest(".radio-input__item");
+  let selectedDeliveryAddress = selectedDeliveryAddressElement.querySelector(
+    ".delivery-option__pickup-address"
+  ).textContent;
+  let selectedRating = selectedDeliveryAddressElement.querySelector(".delivery-option__rating");
+
+  // Проверяем, какой тип доставки выбран
+  if (selectedDeliveryInput.value === "courier") {
+    pickupLabel.textContent = "Доставка курьером";
+    deliveryType.textContent = "Доставка курьером";
+    pickupInfo.style.display = "none";
+  } else {
+    pickupLabel.textContent = "Пункт выдачи";
+    deliveryType.textContent = "Доставка в пункт выдачи";
+    pickupInfo.style.display = "block";
+  }
+
+  // Обновляем адрес доставки
+  addressInBasket.textContent = selectedDeliveryAddress;
+  addressInDelivery.textContent = selectedDeliveryAddress;
+  if (selectedRating) {
+    ratingInBasket.textContent = selectedRating.textContent;
+  }
+
+  const popupActive = document.querySelector(".overlay.open");
+  popupClose(popupActive);
+});
+
+// Логика для кнопки удаления
+
+const buttons = document.querySelectorAll(".btn__del");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", function (event) {
+    event.stopPropagation();
+
+    let parent = this.parentElement;
+    while (parent && !parent.className.endsWith("__item")) {
+      parent = parent.parentElement;
+    }
+    if (parent) {
+      parent.remove();
+    }
+  });
 });

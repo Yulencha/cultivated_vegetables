@@ -531,11 +531,11 @@
         </a>
       </div>
 
-      <div id="popup-payment" class="payment-popup__overlay overlay">
-        <div class="payment-popup popup">
-          <div class="payment-popup__header">
+      <div id="popup-payment" class="popup__overlay overlay">
+        <div class="popup">
+          <div class="popup__header">
             <h3>Способ оплаты</h3>
-            <a href="#" class="payment-popup__close close-popup">
+            <a href="#" class="popup__close close-popup">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -550,7 +550,7 @@
               </svg>
             </a>
           </div>
-          <form class="payment-popup__form">
+          <form class="popup__form">
             <div class="payment-option radio-input__list">
               <label class="payment-option__radio-input radio-input__item">
                 <input
@@ -619,16 +619,18 @@
                 </div>
               </label>
             </div>
-            <button type="submit" class="payment-popup__submit-btn">Выбрать</button>
+            <button type="submit" class="popup__submit-btn popup__submit-btn_payment">
+              Выбрать
+            </button>
           </form>
         </div>
       </div>
 
-      <div id="popup-delivery" class="delivery-popup__overlay overlay">
-        <div class="delivery-popup">
-          <div class="delivery-popup__header">
-            <h3>Способ оплаты</h3>
-            <a href="#" class="delivery-popup__close close-popup">
+      <div id="popup-delivery" class="popup__overlay overlay">
+        <div class="popup popup_delivery">
+          <div class="popup__header">
+            <h3>Способ доставки</h3>
+            <a href="#" class="popup__close close-popup">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -644,69 +646,294 @@
             </a>
           </div>
 
-          <label class="delivery-option__radio-input radio-input__item">
-            <input type="radio" class="tabs-switch__input" name="delivery" value="self" />
-            <span class="radio-input__decor radio-input__decor_active"></span>
-          </label>
+          <form class="popup__form">
+            <div class="delivery-option">
+              <div class="delivery-option__tabs-switch tabs-switch">
+                <label class="tabs-switch__item tabs-switch__item_active">
+                  <input
+                    type="radio"
+                    class="tabs-switch__input"
+                    name="delivery"
+                    value="self"
+                    checked />
+                  <span class="tabs-switch__text">В пункт выдачи</span>
+                </label>
 
-          <input type="radio" class="tabs-switch__input" name="delivery" value="courier" />
-          <!-- <form class="delivery-popup__form">
-          <div class="delivery-option radio-input__list">
-            <label class="delivery-option__radio-input radio-input__item">
-              <input
-                type="radio"
-                id="mir"
-                name="delivery-method"
-                class="radio-input__input"
-                checked />
-              <span class="radio-input__decor radio-input__decor_active"></span>
-              <div class="radio-input__text">
-                <div class="delivery-option__card">
-                  <img src="./img/mir.svg" alt="Логотип МИР" />
-                  <span class="delivery-option__card-details">1234 12•• •••• 1234</span>
-                  <span class="delivery-option__card-expired">01/30</span>
+                <label class="tabs-switch__item">
+                  <input type="radio" class="tabs-switch__input" name="delivery" value="courier" />
+                  <span class="tabs-switch__text">Курьером</span>
+                </label>
+              </div>
+
+              <div class="delivery-option__list radio-input__list">
+                <span class="delivery-option__title">Мои адреса</span>
+
+                <div class="delivery-option__wrap delivery-option__wrap_self">
+                  <label class="delivery-option__radio-input radio-input__item">
+                    <input
+                      type="radio"
+                      id="1"
+                      name="delivery-method"
+                      class="radio-input__input"
+                      checked />
+                    <span class="radio-input__decor radio-input__decor_active"></span>
+                    <div class="radio-input__text">
+                      <div class="delivery-option__pickup-wrap">
+                        <span class="delivery-option__pickup-address">
+                          г. Бишкек, улица Ахматбека Суюмбаева, 12/1
+                        </span>
+
+                        <div class="delivery-option__pickup-info">
+                          <img class="delivery-option__star-icon" src="./img/star_fill.svg" />
+                          <span class="delivery-option__rating">4.99</span>
+                          <span class="delivery-option__text">Пункт выдачи</span>
+                        </div>
+                      </div>
+                      <button class="btn__del" type="button">
+                        <span
+                          >Удалить
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
+                              fill="black"></path>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </label>
+
+                  <label class="delivery-option__radio-input radio-input__item">
+                    <input type="radio" id="2" name="delivery-method" class="radio-input__input" />
+                    <span class="radio-input__decor"></span>
+                    <div class="radio-input__text">
+                      <div class="delivery-option__pickup-wrap">
+                        <span class="delivery-option__pickup-address">
+                          г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                        </span>
+
+                        <div class="delivery-option__pickup-info">
+                          <img class="delivery-option__star-icon" src="./img/star_fill.svg" />
+                          <span class="delivery-option__rating">4.55</span>
+                          <span class="delivery-option__text">Пункт выдачи</span>
+                        </div>
+                      </div>
+                      <button class="btn__del" type="button">
+                        <span
+                          >Удалить
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
+                              fill="black"></path>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </label>
+
+                  <label class="delivery-option__radio-input radio-input__item">
+                    <input type="radio" id="3" name="delivery-method" class="radio-input__input" />
+                    <span class="radio-input__decor"></span>
+                    <div class="radio-input__text">
+                      <div class="delivery-option__pickup-wrap">
+                        <span class="delivery-option__pickup-address">
+                          г. Бишкек, микрорайон Суюмбаева, улица Ахунбаева Исы, д. 67/1
+                        </span>
+
+                        <div class="delivery-option__pickup-info">
+                          <img class="delivery-option__star-icon" src="./img/star_fill.svg" />
+                          <span class="delivery-option__rating">3.99</span>
+                          <span class="delivery-option__text">Пункт выдачи</span>
+                        </div>
+                      </div>
+                      <button class="btn__del" type="button">
+                        <span
+                          >Удалить
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
+                              fill="black"></path>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div class="delivery-option__wrap delivery-option__wrap_courier">
+                  <label class="delivery-option__radio-input radio-input__item">
+                    <input type="radio" id="4" name="delivery-method" class="radio-input__input" />
+                    <span class="radio-input__decor"></span>
+                    <div class="radio-input__text">
+                      <div class="delivery-option__pickup-wrap">
+                        <span class="delivery-option__pickup-address">
+                          г. Бишкек, улица Табышалиева, 57
+                        </span>
+                      </div>
+                      <button class="btn__del" type="button">
+                        <span
+                          >Удалить
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
+                              fill="black"></path>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </label>
+
+                  <label class="delivery-option__radio-input radio-input__item">
+                    <input type="radio" id="5" name="delivery-method" class="radio-input__input" />
+                    <span class="radio-input__decor"></span>
+                    <div class="radio-input__text">
+                      <div class="delivery-option__pickup-wrap">
+                        <span class="delivery-option__pickup-address">
+                          г. Бишкек, улица Жукеева-Пудовкина, 77/1
+                        </span>
+                      </div>
+                      <button class="btn__del" type="button">
+                        <span
+                          >Удалить
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
+                              fill="black"></path>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </label>
+
+                  <label class="delivery-option__radio-input radio-input__item">
+                    <input type="radio" id="6" name="delivery-method" class="radio-input__input" />
+                    <span class="radio-input__decor"></span>
+                    <div class="radio-input__text">
+                      <div class="delivery-option__pickup-wrap">
+                        <span class="delivery-option__pickup-address">
+                          г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
+                        </span>
+                      </div>
+                      <button class="btn__del" type="button">
+                        <span
+                          >Удалить
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z"
+                              fill="black"></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z"
+                              fill="black"></path>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </label>
                 </div>
               </div>
-            </label>
 
-            <label class="delivery-option__radio-input radio-input__item">
-              <input type="radio" id="mcard" name="delivery-method" class="radio-input__input" />
-              <span class="radio-input__decor"></span>
-              <div class="radio-input__text">
-                <div class="delivery-option__card">
-                  <img src="./img/mastercard.svg" alt="Логотип MacterCard" />
-                  <span class="delivery-option__card-details">1234 12•• •••• 1234</span>
-                  <span class="delivery-option__card-expired">01/31</span>
-                </div>
-              </div>
-            </label>
-
-            <label class="delivery-option__radio-input radio-input__item">
-              <input type="radio" id="visa" name="delivery-method" class="radio-input__input" />
-              <span class="radio-input__decor"></span>
-              <div class="radio-input__text">
-                <div class="delivery-option__card">
-                  <img src="./img/visa.svg" alt="Логотип VISA" />
-                  <span class="delivery-option__card-details">1234 12•• •••• 1234</span>
-                  <span class="delivery-option__card-expired">01/32</span>
-                </div>
-              </div>
-            </label>
-
-            <label class="delivery-option__radio-input radio-input__item">
-              <input type="radio" id="maestro" name="delivery-method" class="radio-input__input" />
-              <span class="radio-input__decor"></span>
-              <div class="radio-input__text">
-                <div class="delivery-option__card">
-                  <img src="./img/maestro.svg" alt="Логотип Maestro" />
-                  <span class="delivery-option__card-details">1234 12•• •••• 1234</span>
-                  <span class="delivery-option__card-expired">01/33</span>
-                </div>
-              </div>
-            </label>
-          </div>
-          <button type="submit" class="delivery-popup__submit-btn">Выбрать</button>
-        </form> -->
+              <button type="submit" class="popup__submit-btn popup__submit-btn_delivery">
+                Выбрать
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

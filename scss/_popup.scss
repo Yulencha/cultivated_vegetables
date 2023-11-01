@@ -18,14 +18,14 @@
   }
 }
 
-.payment-popup {
+.popup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 20;
   width: 400px;
-  height: 408px;
+  min-height: 408px;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -39,7 +39,12 @@
     height: 100%;
   }
 
-  &__overlay {
+  &_delivery {
+    width: 500px;
+    min-height: 468px;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__header {
@@ -118,7 +123,7 @@
 
   &__item {
     display: flex;
-    align-items: first baseline;
+    align-items: flex-start;
     gap: 8px;
   }
 
@@ -132,12 +137,125 @@
     height: 16px;
     border-radius: 50%;
     border: 1px solid $rulers_input;
+    margin: 4px 0;
     &_active {
       border: 5px solid $accent;
     }
   }
 
   &__text {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    & svg {
+      margin: 2px 0;
+    }
+  }
+}
+
+.delivery-option {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__title {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    margin-bottom: 8px;
+  }
+
+  &__list {
+    flex: 1;
+    padding: 0 22px 49px;
+
+    @media (max-width: 768px) {
+      padding: 0 14px 49px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &_courier {
+      display: none;
+    }
+
+    &_self {
+    }
+  }
+
+  &__radio-input {
+  }
+
+  &__pickup-wrap {
+  }
+
+  &__pickup-address {
+    @include regular_16px;
+  }
+
+  &__pickup-info {
+    @include regular_13px;
+    @include flex-row;
+  }
+
+  &__star-icon {
+  }
+
+  &__rating {
+    margin-left: 4px;
+  }
+
+  &__text {
+    color: $light-gray;
+    margin-left: 8px;
+  }
+}
+
+.tabs-switch {
+  @include flex-row;
+  padding: 0 22px 24px;
+  gap: 8px;
+  width: 100%;
+  @media (max-width: 768px) {
+    padding: 0 16px 24px;
+  }
+  &__item {
+    flex: 1 1 0;
+    height: 34px;
+    border-radius: 20px;
+    border: 2px solid rgba(203, 17, 171, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_active {
+      border: 2px solid $accent;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__text {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+}
+.btn__del {
+  & span {
+    font-size: 0;
+  }
+  &:hover path {
+    fill: $orange;
   }
 }
 
