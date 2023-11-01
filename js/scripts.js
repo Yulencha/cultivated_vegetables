@@ -13,350 +13,6 @@ accordionIcon.forEach((icon) => {
   icon.addEventListener("click", accordionButtonClick);
 });
 
-// Логика для счетчика
-
-// const countBlocks = document.querySelectorAll(".item__count");
-
-// countBlocks.forEach((countBlock) => {
-//   const numericInput = countBlock.querySelector(".count__numeric");
-//   const minusButton = countBlock.querySelector(".count__minus");
-//   const plusButton = countBlock.querySelector(".count__plus");
-
-//   minusButton.addEventListener("click", () => {
-//     numericInput.stepDown();
-//     plusButton.classList.remove("count__limit");
-//     if (numericInput.value === numericInput.min) {
-//       minusButton.classList.add("count__limit");
-//     } else {
-//       minusButton.classList.remove("count__limit");
-//     }
-//   });
-
-//   plusButton.addEventListener("click", () => {
-//     numericInput.stepUp();
-//     minusButton.classList.remove("count__limit");
-//     if (numericInput.value === numericInput.max) {
-//       plusButton.classList.add("count__limit");
-//     } else {
-//       plusButton.classList.remove("count__limit");
-//     }
-//   });
-// });
-
-// Условные данные о товарах, полученные с бэкенда
-// const items = [
-//   {
-//     name: "Футболка UZcotton мужская",
-//     imagePath: "./img/item_01.png",
-//     color: "белый",
-//     size: "56",
-//     store: "Коледино WB",
-//     seller: {
-//       name: "ООО Вайлдберриз",
-//       registration: "1067746062449",
-//       adress:
-//         "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
-//     },
-//     quantity: 1,
-//     availability: 15,
-//     currency: "сом",
-//     price: 526,
-//     originalPrice: 1051,
-//     personalDiscount: 10,
-//     discount: 40,
-//     favorite: false,
-//     checked: true,
-//   },
-//   {
-//     name: "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
-//     imagePath: "./img/item_02.png",
-//     color: "прозрачный",
-//     size: false,
-//     store: "Коледино WB",
-//     seller: {
-//       name: "OOO Мегапрофстиль",
-//       registration: "5167746237148",
-//       adress:
-//         "129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34",
-//     },
-//     quantity: 200,
-//     availability: 205,
-//     currency: "сом",
-//     price: 10350,
-//     originalPrice: 11500,
-//     personalDiscount: 4,
-//     discount: 5,
-//     favorite: false,
-//     checked: true,
-//   },
-//   {
-//     name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
-//     imagePath: "./img/item_03.png",
-//     color: false,
-//     size: false,
-//     store: "Коледино WB",
-//     seller: {
-//       name: "ООО Вайлдберриз",
-//       registration: "1067746062449",
-//       adress:
-//         "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
-//     },
-//     quantity: 2,
-//     availability: 2,
-//     currency: "сом",
-//     price: 247,
-//     originalPrice: 475,
-//     personalDiscount: 12,
-//     discount: 40,
-//     favorite: false,
-//     checked: true,
-//   },
-
-//   {
-//     name: "Футболка UZcotton мужская",
-//     imagePath: "./img/item_04.png",
-//     color: "белый",
-//     size: "56",
-//     store: "Коледино WB",
-//     seller: {
-//       name: "ООО Вайлдберриз",
-//       registration: "1067746062449",
-//       adress:
-//         "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
-//     },
-//     quantity: 1,
-//     availability: 0,
-//     currency: "сом",
-//     price: 526,
-//     originalPrice: 1051,
-//     personalDiscount: 10,
-//     discount: 40,
-//     favorite: false,
-//     checked: false,
-//   },
-//   {
-//     name: "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
-//     imagePath: "./img/item_05.png",
-//     color: "прозрачный",
-//     size: false,
-//     store: "Коледино WB",
-//     seller: {
-//       name: "OOO Мегапрофстиль",
-//       registration: "5167746237148",
-//       adress:
-//         "129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34",
-//     },
-//     quantity: 200,
-//     availability: 0,
-//     currency: "сом",
-//     price: 10350,
-//     originalPrice: 11500,
-//     personalDiscount: 4,
-//     discount: 5,
-//     favorite: false,
-//     checked: false,
-//   },
-//   {
-//     name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
-//     imagePath: "./img/item_06.png",
-//     color: false,
-//     size: false,
-//     store: "Коледино WB",
-//     seller: {
-//       name: "ООО Вайлдберриз",
-//       registration: "1067746062449",
-//       adress:
-//         "142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1",
-//     },
-//     quantity: 2,
-//     availability: 0,
-//     currency: "сом",
-//     price: 247,
-//     originalPrice: 475,
-//     personalDiscount: 12,
-//     discount: 40,
-//     favorite: false,
-//     checked: false,
-//   },
-// ];
-
-// Класс для создания HTML-кода карточки товара
-// class ProductCard {
-//   constructor(item) {
-//     this.item = item;
-//     this.availability = item.availability > 0;
-//   }
-
-//   generateCard() {
-//     const card = document.createElement("div");
-//     card.className = "accordion__item item";
-
-//     const checkboxHtml = this.availability ? this.generateCheckboxHtml() : "";
-//     const colorHtml = this.item.color
-//       ? this.generatePropertyHtml("Цвет", this.item.color)
-//       : "";
-//     const sizeHtml = this.item.size
-//       ? this.generatePropertyHtml("Размер", this.item.size)
-//       : "";
-//     const infoStoreHtml = this.availability ? this.generateStoreHtml() : "";
-//     const infoSellerHtml = this.availability ? this.generateSellerHtml() : "";
-
-//     const countHtml = this.availability ? this.generateCountHtml() : "";
-
-//     const limitHtml =
-//       this.item.availability < 6 && this.item.availability > 0
-//         ? this.generateLimitHtml()
-//         : "";
-//     const priceHtml =
-//       this.item.availability > 0 ? this.generatePriceHtml() : "";
-
-//     card.innerHTML = `
-//       <div class="item__wrap">
-//         ${checkboxHtml}
-//         <a href="#" class="item__img" title=${this.item.name}>
-//           <img src=${this.item.imagePath} alt=${this.item.name} />
-//         </a>
-//       </div>
-
-//       <div class="item__good-info good-info">
-//         <a href="#" class="good-info__title">
-//           <span class="good-info__name">${this.item.name}
-//           </span>
-//         </a>
-//         <div class="good-info__properties">
-//           ${colorHtml}
-//           ${sizeHtml}
-//         </div>
-
-//         ${infoStoreHtml}
-//         ${infoSellerHtml}
-//       </div>
-
-//       <div class="item__btn-wrap">
-//         ${countHtml}
-//         ${limitHtml}
-//         <div class="item__btn btn">
-//           <button class="btn__postpone" type="button">
-//             <span>В избранное
-//               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none">
-//                 <path d="M8.7038 2.12882C8.7978 2.22448 8.9263 2.27836 9.06041 2.27836C9.19453 2.27836 9.32302 2.22448 9.41703 2.12882C10.037 1.49801 11.1892 0.499741 13.0604 0.499741C14.212 0.499741 15.4619 0.874807 16.3615 1.68724C17.261 2.49966 17.8104 3.74962 17.5604 5.49974C17.3104 7.24975 16.1854 8.99974 14.6229 10.6872C13.0604 12.3747 11.0604 13.9997 9.06041 15.4997C7.06042 13.9997 5.06043 12.3747 3.49793 10.6872C1.93545 8.99974 0.810441 7.24975 0.56041 5.49974C0.310364 3.74962 0.859731 2.49966 1.75929 1.68724C2.65885 0.874807 3.90881 0.499741 5.06041 0.499741C6.93163 0.499741 8.08386 1.49801 8.7038 2.12882Z" stroke="black" stroke-linejoin="round" />
-//               </svg>
-//             </span>
-//           </button>
-//           <button class="btn__del" type="button">
-//             <span>Удалить
-//               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-//                 <path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 5C2.5 4.72386 2.72386 4.5 3 4.5H17C17.2761 4.5 17.5 4.72386 17.5 5C17.5 5.27614 17.2761 5.5 17 5.5H3C2.72386 5.5 2.5 5.27614 2.5 5Z" fill="black" />
-//                 <path fill-rule="evenodd" clip-rule="evenodd" d="M3.4584 4.5H16.5059L15.6411 15.6926C15.5405 16.9947 14.4546 18 13.1486 18H6.84639C5.54299 18 4.45829 16.9986 4.35435 15.6994L3.4584 4.5ZM4.5416 5.5L5.35117 15.6196C5.41353 16.3992 6.06435 17 6.84639 17H13.1486C13.9322 17 14.5837 16.3968 14.6441 15.6155L15.4256 5.5H4.5416Z" fill="black" />
-//                 <path fill-rule="evenodd" clip-rule="evenodd" d="M13 5.5H7V3.46875C7 2.65758 7.65758 2 8.46875 2H11.5312C12.3424 2 13 2.65758 13 3.46875V5.5ZM8.46875 3C8.20987 3 8 3.20987 8 3.46875V4.5H12V3.46875C12 3.20987 11.7901 3 11.5312 3H8.46875Z" fill="black" />
-//               </svg>
-//             </span>
-//           </button>
-//         </div>
-//       </div>
-
-//       <div class="item__price">
-//         ${priceHtml}
-//       </div>`;
-
-//     return card;
-//   }
-
-//   generateCheckboxHtml() {
-//     return `
-//       <label class="item__checkbox checkbox">
-//         <input type="checkbox" />
-//         <span class="checkbox__decor"></span>
-//       </label>
-//     `;
-//   }
-
-//   generatePropertyHtml(label, value) {
-//     return `
-//       <span class="good-info__item">${label}: ${value}</span>
-//     `;
-//   }
-
-//   generateStoreHtml() {
-//     return `
-//       <div class="good-info__store">
-//         <span class="good-info__item">${this.item.store}</span>
-//       </div>
-//     `;
-//   }
-
-//   generateSellerHtml() {
-//     return `
-//       <div class="good-info__seller">
-//         <span class="good-info__item">${this.item.seller.name}</span>
-//         <div class="good-info__seller-info seller-info">
-//           <img class="seller-info__icon" src="./img/seller-info.svg" />
-//           <div class="seller-info__popup">
-//             <span class="seller-info__name">${this.item.seller.name}</span>
-//             <span class="seller-info__registration">ОГРН: ${this.item.seller.registration}</span>
-//             <span class="seller-info__address">${this.item.seller.adress}</span>
-//           </div>
-//         </div>
-//       </div>
-//     `;
-//   }
-
-//   generateCountHtml() {
-//     const minusButtonClass =
-//       this.item.quantity == 1 ? "count__minus count__limit" : "count__minus";
-//     return `
-//       <div class="item__count count">
-//         <button type="button" class=${minusButtonClass}>-</button>
-//         <input type="number" autocomplete="off" maxlength="3" min="1" max="${this.item.availability}" class="count__numeric" value="${this.item.quantity}" />
-//         <button type="button" class="count__plus">+</button>
-//       </div>
-//     `;
-//   }
-
-//   generateLimitHtml() {
-//     return `
-//       <div class="item__limit">Осталось ${this.item.availability} шт.</div>
-//     `;
-//   }
-
-//   generatePriceHtml() {
-//     const personalDiscount =
-//       ((this.item.personalDiscount * this.item.originalPrice) / 100) *
-//       this.item.availability;
-//     const sellerDiscount =
-//       ((this.item.discount * this.item.originalPrice) / 100) *
-//       this.item.availability;
-
-//     const priceNewHtml = `<span class="item__price-new">${this.item.price} ${this.item.currency}</span>`;
-//     const priceOldHtml = `
-//       <div class="item__price-wrap">
-//         <span class="item__price-old">${
-//           this.item.originalPrice * this.item.availability
-//         } ${this.item.currency}</span>
-//         <div class="item__discount-popup">
-//           <div class="item__seller-discount">
-//             <span class="item__key-discount">Скидка ${
-//               this.item.discount
-//             }%</span>
-//             <span class="item__value-discount">-${sellerDiscount} ${
-//       this.item.currency
-//     }</span>
-//           </div>
-//           <div class="item__personal-discount">
-//             <span class="item__key-discount">Скидка покупателя ${
-//               this.item.personalDiscount
-//             }%</span>
-//             <span class="item__value-discount">-${personalDiscount} ${
-//       this.item.currency
-//     }</span>
-//           </div>
-//         </div>
-//       </div>
-//     `;
-//     return `${priceNewHtml}${priceOldHtml}`;
-//   }
-// }
-
 // Генерация карточек товаров и их добавление на страницу
 
 function generateProductCards(items) {
@@ -379,7 +35,7 @@ generateProductCards(items);
 
 // Логика для чекбоксов
 
-let checkboxArr = Array.from(document.getElementsByClassName("checkbox"));
+let checkboxArr = document.querySelectorAll(".checkbox");
 
 function toggleCheckbox(event) {
   const checkbox = event.currentTarget.querySelector('input[type="checkbox"]');
@@ -392,7 +48,151 @@ checkboxArr.forEach((checkbox) => {
   checkbox.addEventListener("click", toggleCheckbox);
 });
 
-// Для разбиения суммы по тысячам
-function formatNumberWithSpaces(number) {
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0");
+// Логика для радиокнопок
+
+function updateRadioDisplay(radioInput) {
+  const radioList = radioInput.closest(".radio-input__list");
+  if (!radioList) return;
+
+  const radioDecorElements = radioList.querySelectorAll(".radio-input__decor");
+  radioDecorElements.forEach((decor) => {
+    decor.classList.remove("radio-input__decor_active");
+  });
+
+  if (radioInput.checked) {
+    const decorElement = radioInput.nextElementSibling;
+    decorElement.classList.add("radio-input__decor_active");
+  }
 }
+
+const radioInputs = document.querySelectorAll(".radio-input__input");
+
+radioInputs.forEach((radioInput) => {
+  radioInput.addEventListener("change", () => updateRadioDisplay(radioInput));
+
+  updateRadioDisplay(radioInput);
+});
+
+// Логика для открытия/закрытия popup
+
+const popupLinks = document.querySelectorAll(".popup-link");
+const body = document.body;
+const lockPadding = document.querySelectorAll(".lock-padding");
+const popupCloseIcons = document.querySelectorAll(".close-popup");
+
+let unlock = true;
+const timeout = 100;
+
+function popupOpen(currentPopup) {
+  if (currentPopup && unlock) {
+    const popupActive = document.querySelector(".overlay.open");
+    popupActive ? popupClose(popupActive, false) : bodyLock();
+    currentPopup.classList.add("open");
+    currentPopup.addEventListener("click", (event) => {
+      if (!event.target.closest(".popup")) {
+        popupClose(currentPopup);
+      }
+    });
+  }
+}
+
+function popupClose(popup, doUnlock = true) {
+  if (unlock) {
+    popup.classList.remove("open");
+    if (doUnlock) {
+      bodyUnLock();
+    }
+  }
+}
+
+function bodyLock() {
+  // const lockPaddingValue =
+  //   window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+  // if (lockPadding > 0) {
+  //   lockPadding.forEach((el) => {
+  //     el.style.paddingRight = lockPaddingValue;
+  //   });
+  // }
+  // body.style.paddingRight = lockPaddingValue;
+  body.classList.add("lock");
+
+  unlock = false;
+  setTimeout(() => {
+    unlock = true;
+  }, timeout);
+}
+
+function bodyUnLock() {
+  setTimeout(() => {
+    // if (lockPadding > 0) {
+    //   lockPadding.forEach((el) => {
+    //     el.style.paddingRight = "0px";
+    //   });
+    // }
+    // body.style.paddingRight = "0px";
+    body.classList.remove("lock");
+  }, timeout);
+  unlock = false;
+  setTimeout(() => {
+    unlock = true;
+  }, timeout);
+}
+
+if (popupLinks.length > 0) {
+  popupLinks.forEach((popupLink) => {
+    popupLink.addEventListener("click", (event) => {
+      const popupName = popupLink.getAttribute("href").replace("#", "");
+      const currentPopup = document.getElementById(popupName);
+      popupOpen(currentPopup);
+      event.preventDefault();
+    });
+  });
+  popupCloseIcons.forEach((icon) => {
+    icon.addEventListener("click", (event) => {
+      const popup = icon.closest(".overlay");
+      popupClose(popup);
+      event.preventDefault();
+    });
+  });
+}
+
+// Обработка выбранных данных в payment-popup
+
+document.querySelector(".payment-popup__submit-btn").addEventListener("click", function (event) {
+  event.preventDefault(); // Предотвращение отправки формы
+
+  // Получить выбранное значение
+  let selectedInput = document.querySelector('input[name="payment-method"]:checked');
+
+  let inputBlock = selectedInput.closest(".payment-option__radio-input");
+
+  let cardAbsoluteUrl = inputBlock.querySelector(".payment-option__card-img").src; // Изображение карты
+  let urlObj = new URL(cardAbsoluteUrl);
+  let cardRelativePath = "." + urlObj.pathname;
+  let cardNumber = inputBlock.querySelector(".payment-option__card-details").textContent; // Номер карты
+  let cardExpiry = inputBlock.querySelector(".payment-option__card-expired").textContent; // Срок действия карты
+
+  // console.log(cardRelativePath);
+  // console.log(cardNumber);
+  // console.log(cardExpiry);
+  // Замена содержимого в других элементах .
+
+  let sidebarPaymentElement = document.querySelector(".payment__chosen");
+  let sidebarImg = sidebarPaymentElement.querySelector("img");
+  let sidebarText = sidebarPaymentElement.querySelector("span");
+
+  let basketPaymentElement = document.querySelector(".basket-payment__card");
+  let basketImg = basketPaymentElement.querySelector("img");
+  let basketText = basketPaymentElement.querySelector(".basket-payment__card-details");
+  let basketExpired = basketPaymentElement.querySelector(".basket-payment__card-expired");
+
+  sidebarImg.src = cardRelativePath;
+  sidebarText.textContent = cardNumber;
+
+  basketImg.src = cardRelativePath;
+  basketText.textContent = cardNumber;
+  basketExpired.textContent = cardExpiry;
+
+  const popupActive = document.querySelector(".overlay.open");
+  popupClose(popupActive);
+});

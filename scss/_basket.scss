@@ -150,36 +150,6 @@
   }
 }
 
-.checkbox {
-  & input {
-    display: none;
-  }
-  &__decor {
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
-    border: 1px solid $rulers_input;
-    margin-right: 12px;
-    background: transparent;
-  }
-  &__text {
-    @include regular_16px;
-  }
-  &_active {
-    .checkbox__decor {
-      width: 22px;
-      height: 22px;
-      border: none;
-      background: url(../img/checkbox.svg);
-    }
-  }
-}
-.checkbox_with-text {
-  display: flex;
-  align-items: center;
-}
-
 .item {
   display: grid;
   grid-template-columns: 106px auto 100px 110px;
