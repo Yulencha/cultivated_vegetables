@@ -198,12 +198,17 @@
               </div>
 
               <!-- Return policy section -->
-              <div class="basket-delivery__return-policy">
-                <img class="basket-delivery__return-icon" src="./img/price_shipping.svg" />
-                <span class="basket-delivery__return-text"
-                  >Обратная доставка товаров на склад при отказе —
-                  <a href="#" class="basket-delivery__return-link">бесплатно</a></span
-                >
+              <div class="basket-delivery__return-policy return">
+                <img class="return__icon" src="./img/price_shipping.svg" />
+                <div class="return__text">
+                  Обратная доставка товаров на склад при отказе —
+                  <div class="return__link">
+                    бесплатно
+                    <div class="return__tooltip">
+                      Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -237,8 +242,8 @@
                     id="recipient-name"
                     name="recipient-name"
                     class="basket-recipient__input"
-                    placeholder="Имя" />
-                  <span class="basket-recipient__error" id="recipient-name-error">Укажите имя</span>
+                    placeholder="Укажите имя" />
+                  <span class="basket-recipient__error" id="recipient-name-error"></span>
                 </div>
 
                 <!-- Surname -->
@@ -249,10 +254,8 @@
                     id="recipient-surname"
                     name="recipient-surname"
                     class="basket-recipient__input"
-                    placeholder="Фамилия" />
-                  <span class="basket-recipient__error" id="recipient-surname-error"
-                    >Укажите фамилию</span
-                  >
+                    placeholder="Введите фамилию" />
+                  <span class="basket-recipient__error" id="recipient-surname-error"></span>
                 </div>
               </div>
 
@@ -265,7 +268,7 @@
                     id="recipient-email"
                     name="recipient-email"
                     class="basket-recipient__input"
-                    placeholder="Почта" />
+                    placeholder="Укажите электронную почту" />
                   <span class="basket-recipient__error" id="recipient-email-error"></span>
                 </div>
 
@@ -273,26 +276,26 @@
                 <div class="basket-recipient__input-group">
                   <label for="recipient-phone" class="basket-recipient__label">Телефон</label>
                   <input
-                    type="tel"
+                    type="phone"
                     id="recipient-phone"
                     name="recipient-phone"
                     class="basket-recipient__input"
-                    placeholder="Телефон" />
+                    maxlength="30"
+                    placeholder="Укажите номер телефона" />
                   <span class="basket-recipient__error" id="recipient-phone-error"></span>
                 </div>
 
                 <!-- VIN / ИНН -->
                 <div class="basket-recipient__input-group">
-                  <label for="recipient-vin" class="basket-recipient__label">ИНН</label>
+                  <label for="recipient-vin" class="basket-recipient__label">ИНН для таможни</label>
                   <input
                     type="text"
                     id="recipient-vin"
                     name="recipient-vin"
                     class="basket-recipient__input"
-                    placeholder="ИНН" />
-                  <span class="basket-recipient__error" id="recipient-vin-error"
-                    >Для таможенного оформления</span
-                  >
+                    placeholder="Укажите ИНН"
+                    maxlength="14" />
+                  <span class="basket-recipient__error" id="recipient-vin-error"></span>
                 </div>
               </div>
             </div>
@@ -354,15 +357,19 @@
                   Бишкек, улица Ахматбека Суюмбаева, 12/1
                 </div>
                 <div class="delivery__days hide-mobile"><span>5–8 фев</span></div>
-                <div class="delivery__conditions">
-                  <img src="./img/price_shipping.svg" />
-                  <span
-                    >Обратная доставка товаров на склад при отказе —<a
-                      class="delivery__conditions-link"
-                      href="#"
-                      >бесплатно</a
-                    ></span
-                  >
+
+                <!-- Return policy section -->
+                <div class="delivery__return-policy return">
+                  <img class="return__icon" src="./img/price_shipping.svg" />
+                  <div class="return__text">
+                    Обратная доставка товаров на склад при отказе —
+                    <div class="return__link">
+                      бесплатно
+                      <div class="return__tooltip">
+                        Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="sidebar__payment payment">
@@ -404,7 +411,10 @@
                 </div>
               </div>
               <div class="sidebar__order">
-                <button class="sidebar__order-btn">Заказать</button>
+                <button type="submit" class="sidebar__order-btn">
+                  <span class="sidebar__order-btn_not-checkted">Заказать</span>
+                  <span class="sidebar__order-btn_checkted">Оплатить 1 016 сом</span>
+                </button>
                 <div class="sidebar__agreement">
                   <img src="./img/check.svg" />
                   <span>Соглашаюсь с правилами пользования торговой площадкой и возврата</span>

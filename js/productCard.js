@@ -132,7 +132,7 @@ export const items = [
   },
 ];
 
-export class ProductCard {
+class ProductCard {
   constructor(item) {
     this.item = item;
     this.availability = item.availability > 0;
@@ -292,46 +292,6 @@ export class ProductCard {
       this.item.quantity,
       this.item.currency
     );
-
-    // const personalDiscount = ((this.item.personalDiscount * this.item.originalPrice) / 100) * this.item.quantity;
-    // const sellerDiscount = ((this.item.discount * this.item.originalPrice) / 100) * this.item.quantity;
-
-    // const totalPrice = this.item.originalPrice * this.item.quantity;
-    // const totalPriceWithDiscount = totalPrice - personalDiscount - sellerDiscount;
-
-    // const currency = `<span class="item__currency"> ${this.item.currency}</span>`;
-
-    // const priceNewHtml = `
-    //   <div class="item__price-new">
-    //     <span>${formatNumberWithSpaces(totalPriceWithDiscount)}</span>
-    //     <span>${currency}</span>
-    //   </div>`;
-
-    // const priceOldHtml = `
-    //   <div class="item__price-wrap" data-price=${this.item.originalPrice} data-seller-discount=${
-    //   this.item.discount
-    // } data-personal-discount=${this.item.personalDiscount}>
-    //     <div class="item__price-old">
-    //       <span>${formatNumberWithSpaces(totalPrice)}</span>
-    //       <span>${currency}</span>
-    //     </div>
-    //     <div class="item__discount-popup">
-    //       <div class="item__discount-key">
-    //         <span>Скидка ${this.item.discount}%</span>
-    //         <span>Скидка покупателя ${this.item.personalDiscount}%</span>
-    //       </div>
-    //       <div class="item__discount-value">
-    //         <span>-${formatNumberWithSpaces(sellerDiscount)}</span>
-    //         <span>-${formatNumberWithSpaces(personalDiscount)}</span>
-    //       </div>
-    //       <div class="item__discount-currency">
-    //         <span>${currency}</span>
-    //         <span>${currency}</span>
-    //       </div>
-    //     </div>
-    //   </div>
-    // `;
-    // return `${priceNewHtml}${priceOldHtml}`;
   }
 
   generateCountBlock() {
@@ -452,6 +412,7 @@ function generatePrice(price, sellerDiscountValue, personalDiscountValue, quanti
   return `${priceNewHtml}${priceOldHtml}`;
 }
 
+// обновление блока с ценой
 function updatePrices(number, event) {
   const productCard = event.currentTarget.closest(".accordion__item");
   const priceBlock = productCard.querySelector(".item__price");
@@ -496,3 +457,20 @@ function updatePrices(number, event) {
 //     }
 //   });
 // });
+
+// Генерация карточек товаров и их добавление на страницу
+export function generateProductCards(items) {
+  const accordionAvailable = document.getElementById("accordion_available");
+  const accordionNotAvailable = document.getElementById("accordion_not-available");
+
+  items.forEach((item) => {
+    const product = new ProductCard(item);
+    const productCard = product.generateCard();
+
+    if (item.availability > 0) {
+      accordionAvailable.appendChild(productCard);
+    } else {
+      accordionNotAvailable.appendChild(productCard);
+    }
+  });
+}

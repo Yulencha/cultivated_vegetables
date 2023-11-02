@@ -221,22 +221,9 @@
   &__return-policy {
     margin-top: 8px;
     grid-column: span 2;
-    @include flex-row;
-    gap: 8px;
     @media (max-width: 768px) {
       margin-top: 0;
     }
-  }
-
-  &__return-icon {
-  }
-
-  &__return-text {
-  }
-
-  &__return-link {
-    color: $green;
-    border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
   }
 }
 .btn-change {
@@ -302,6 +289,7 @@
     @include regular_13px;
     padding-bottom: 2px;
     color: $gray;
+    visibility: hidden;
   }
 
   &__input {
@@ -309,6 +297,10 @@
     padding-bottom: 3px;
     border-bottom: 1px solid $rulers_input;
     margin-bottom: 4px;
+    &.error {
+      color: $orange;
+      border-bottom: 1px solid $orange;
+    }
   }
   &__input::placeholder {
     @include regular_16px;
@@ -319,6 +311,49 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 14px;
+    color: $orange;
+  }
+}
+
+.return {
+  @include flex-row;
+  gap: 8px;
+
+  &__icon {
+  }
+
+  &__text {
+  }
+
+  &__link {
+    display: inline-flex;
+    color: $green;
+    border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      & .return__tooltip {
+        display: flex;
+      }
+    }
+  }
+
+  &__tooltip {
+    border-radius: 8px;
+    display: none;
+    background: $white;
+    width: 288px;
+    padding: 10px 16px 14px 16px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    transform: translateX(-50%);
+    @include regular_13px;
+    color: $black;
+    @media (min-width: 1024px) and (max-width: 1399px) {
+      left: -25px;
+    }
   }
 }
 

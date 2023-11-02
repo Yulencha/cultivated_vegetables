@@ -65,6 +65,13 @@
     border-radius: 8px;
     @include subtitles;
     color: $white;
+
+    &_not-checkted {
+    }
+
+    &_checkted {
+      display: none;
+    }
   }
 
   &__agreement {
@@ -94,23 +101,16 @@
     border-bottom: 1px dashed rgba(203, 17, 171, 0.2);
   }
 
-  &__conditions {
+  &__return-policy {
     margin-top: 8px;
     padding: 8px 8px 12px 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+
     border-radius: 8px;
     background: $smoky;
     @media (max-width: 768px) {
       background: $smoky-dark;
       margin-top: 0;
     }
-  }
-
-  &__conditions-link {
-    color: $green;
-    border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
   }
 }
 .payment {
