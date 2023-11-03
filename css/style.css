@@ -1784,6 +1784,9 @@ body {
   flex-direction: column;
   font-family: "Segoe UI", sans-serif;
 }
+body.lock {
+  overflow: hidden;
+}
 
 .wrapper {
   width: 100%;

@@ -12,6 +12,9 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Segoe UI", sans-serif;
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 .wrapper {

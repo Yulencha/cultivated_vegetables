@@ -1,3 +1,5 @@
+import { updateTotalOrderInfo, calculatePrices } from "./infoUpdaters.js";
+
 export const items = [
   {
     name: "Футболка UZcotton мужская",
@@ -267,18 +269,6 @@ class ProductCard {
     `;
   }
 
-  generateCountHtml() {
-    const minusButtonClass = this.item.quantity == 1 ? "count__minus count__limit" : "count__minus";
-    return `
-      <div class="item__count count">
-        <button type="button" class=${minusButtonClass}>-</button>
-        <input type="number" autocomplete="off" maxlength="3" min="1" max="${this.item.availability}" 
-          class="count__numeric" value="${this.item.quantity}" />
-        <button type="button" class="count__plus">+</button>
-      </div>
-    `;
-  }
-
   generateLimitHtml() {
     return `
       <div class="item__limit">Осталось ${this.item.availability} шт.</div>
@@ -338,7 +328,7 @@ class ProductCard {
   setupCountEventListeners(minusButton, plusButton, numericInput) {
     minusButton.addEventListener("click", (event) => {
       numericInput.stepDown();
-      updatePrices(numericInput.value, event);
+      updateProductAndOrderDetails(numericInput.value, event);
       plusButton.classList.remove("count__limit");
       if (numericInput.value === numericInput.min) {
         minusButton.classList.add("count__limit");
@@ -349,7 +339,7 @@ class ProductCard {
 
     plusButton.addEventListener("click", (event) => {
       numericInput.stepUp();
-      updatePrices(numericInput.value, event);
+      updateProductAndOrderDetails(numericInput.value, event);
       minusButton.classList.remove("count__limit");
       if (numericInput.value === numericInput.max) {
         plusButton.classList.add("count__limit");
@@ -358,105 +348,7 @@ class ProductCard {
       }
     });
   }
-
-  updatePrices(number) {
-    return updatePrices(number);
-  }
 }
-
-// Для разбиения суммы по тысячам
-function formatNumberWithSpaces(number) {
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0");
-}
-
-// Генерация блока с ценой для каждого товара
-function generatePrice(price, sellerDiscountValue, personalDiscountValue, quantity, curr) {
-  const personalDiscount = Math.round(((personalDiscountValue * price) / 100) * quantity);
-  const sellerDiscount = Math.round(((sellerDiscountValue * price) / 100) * quantity);
-
-  const totalPrice = price * quantity;
-  const totalPriceWithDiscount = totalPrice - personalDiscount - sellerDiscount;
-
-  const priceSize = totalPriceWithDiscount < 1000000 ? "item__price-new_big" : "";
-
-  const currency = ` ${curr}`;
-
-  const priceNewHtml = `
-    <div class="item__price-new">
-      <span class=${priceSize}>${formatNumberWithSpaces(totalPriceWithDiscount)}</span>
-      <span>${currency}</span>
-    </div>`;
-
-  const priceOldHtml = `
-    <div class="item__price-wrap" data-price=${price} data-seller-discount=${sellerDiscountValue} data-personal-discount=${personalDiscountValue} data-currency=${curr}>
-      <div class="item__price-old">
-        <span>${formatNumberWithSpaces(totalPrice)}</span>
-        <span>${currency}</span>
-      </div>
-      <div class="item__discount-popup">
-        <div class="item__discount-key">
-          <span>Скидка ${sellerDiscountValue}%</span>
-          <span>Скидка покупателя ${personalDiscountValue}%</span>
-        </div>
-        <div class="item__discount-value">
-          <span>-${formatNumberWithSpaces(sellerDiscount)}</span>
-          <span>-${formatNumberWithSpaces(personalDiscount)}</span>
-        </div>
-        <div class="item__discount-currency">
-          <span>&nbsp;${currency}</span>
-          <span>&nbsp;${currency}</span>
-        </div>
-      </div>
-    </div>
-  `;
-  return `${priceNewHtml}${priceOldHtml}`;
-}
-
-// обновление блока с ценой
-function updatePrices(number, event) {
-  const productCard = event.currentTarget.closest(".accordion__item");
-  const priceBlock = productCard.querySelector(".item__price");
-  const data = priceBlock.querySelector(".item__price-wrap").dataset;
-
-  const newPrice = generatePrice(
-    data.price,
-    data.sellerDiscount,
-    data.personalDiscount,
-    number,
-    data.currency
-  );
-  priceBlock.innerHTML = newPrice;
-}
-
-// Логика для счетчика
-
-// const countBlocks = document.querySelectorAll(".item__count");
-
-// countBlocks.forEach((countBlock) => {
-//   const numericInput = countBlock.querySelector(".count__numeric");
-//   const minusButton = countBlock.querySelector(".count__minus");
-//   const plusButton = countBlock.querySelector(".count__plus");
-
-//   minusButton.addEventListener("click", () => {
-//     numericInput.stepDown();
-//     plusButton.classList.remove("count__limit");
-//     if (numericInput.value === numericInput.min) {
-//       minusButton.classList.add("count__limit");
-//     } else {
-//       minusButton.classList.remove("count__limit");
-//     }
-//   });
-
-//   plusButton.addEventListener("click", () => {
-//     numericInput.stepUp();
-//     minusButton.classList.remove("count__limit");
-//     if (numericInput.value === numericInput.max) {
-//       plusButton.classList.add("count__limit");
-//     } else {
-//       plusButton.classList.remove("count__limit");
-//     }
-//   });
-// });
 
 // Генерация карточек товаров и их добавление на страницу
 export function generateProductCards(items) {
@@ -473,4 +365,62 @@ export function generateProductCards(items) {
       accordionNotAvailable.appendChild(productCard);
     }
   });
+}
+
+//Обновление цен, количества товаров в корзине и цены на товар (вызывается при изменение количества товара)
+function updateProductAndOrderDetails(quantity, event) {
+  updatePrices(quantity, event);
+  updateTotalOrderInfo();
+}
+
+// обновление блока с ценой
+function updatePrices(quantity, event) {
+  const productCard = event.currentTarget.closest(".accordion__item");
+  const priceBlock = productCard.querySelector(".item__price");
+  //   const data = priceBlock.querySelector(".item__price-wrap").dataset;
+  const data = priceBlock.querySelector(".item__price-wrap").dataset;
+  const { price, sellerDiscount, personalDiscount, currency } = data;
+
+  const newPrice = generatePrice(price, sellerDiscount, personalDiscount, quantity, currency);
+  priceBlock.innerHTML = newPrice;
+}
+
+// Генерация блока с ценой для каждого товара
+function generatePrice(price, sellerDiscount, personalDiscount, quantity, currency) {
+  const prices = calculatePrices({ price, sellerDiscount, personalDiscount, quantity });
+  // Деструктуризация полученных значений в отдельные переменные
+  const { totalPrice, discountedPrice, sellerDiscountTotal, personalDiscountTotal } = prices;
+  const priceClassName = discountedPrice < 1000000 ? "item__price-new_big" : "";
+
+  const currencyHtml = ` ${currency}`;
+
+  const priceNewHtml = `
+    <div class="item__price-new">
+      <span class=${priceClassName}>${discountedPrice.toLocaleString()}</span>
+      <span>${currencyHtml}</span>
+    </div>`;
+
+  const priceOldHtml = `
+    <div class="item__price-wrap" data-price=${price} data-seller-discount=${sellerDiscount} data-personal-discount=${personalDiscount} data-currency=${currency}>
+      <div class="item__price-old">
+        <span>${totalPrice.toLocaleString()}</span>
+        <span>${currencyHtml}</span>
+      </div>
+      <div class="item__discount-popup">
+        <div class="item__discount-key">
+          <span>Скидка ${sellerDiscount}%</span>
+          <span>Скидка покупателя ${personalDiscount}%</span>
+        </div>
+        <div class="item__discount-value">
+          <span>-${sellerDiscountTotal.toLocaleString()}</span>
+          <span>-${personalDiscountTotal.toLocaleString()}</span>
+        </div>
+        <div class="item__discount-currency">
+          <span>&nbsp;${currencyHtml}</span>
+          <span>&nbsp;${currencyHtml}</span>
+        </div>
+      </div>
+    </div>
+  `;
+  return `${priceNewHtml}${priceOldHtml}`;
 }

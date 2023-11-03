@@ -4,6 +4,11 @@ import { initCheckboxHandlers } from "./checkboxHandler.js";
 import { initRadioButtonHandlers } from "./radioButtonHandler.js";
 import { initPopupHandlers } from "./popupHandler.js";
 import { initFormHandlers } from "./formHandler.js";
+import {
+  updateTotalOrderInfo,
+  updateAccordionHeaderInfo,
+  updateBasketIconCount,
+} from "./infoUpdaters.js";
 
 // Генерация карточек товаров и их добавление на страницу
 generateProductCards(items);
@@ -23,6 +28,9 @@ initPopupHandlers();
 // Логика для валидации и отправки формы
 initFormHandlers();
 
+//Обновление цен, количества товаров в корзине
+updateTotalOrderInfo();
+
 // Логика для кнопки удаления
 
 const buttons = document.querySelectorAll(".btn__del");
@@ -36,7 +44,14 @@ buttons.forEach((button) => {
       parent = parent.parentElement;
     }
     if (parent) {
+      const accordionBody = parent.closest(".accordion__body");
       parent.remove();
+      if (accordionBody.id === "accordion_available") {
+        updateTotalOrderInfo();
+        updateBasketIconCount();
+      } else if (accordionBody.id === "accordion_not-available") {
+        updateAccordionHeaderInfo();
+      }
     }
   });
 });
