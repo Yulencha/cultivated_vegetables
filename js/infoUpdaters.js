@@ -18,7 +18,8 @@ function collectItemsInfo() {
       // Получение пути к изображению
       let imgAbsoluteUrl = item.querySelector(".item__img img").src;
       let urlObj = new URL(imgAbsoluteUrl);
-      let imgRelativePath = "." + urlObj.pathname;
+
+      let imgRelativePath = "." + urlObj.pathname.slice(urlObj.pathname.indexOf("/img/"));
 
       // Получение количества
       const countInput = item.querySelector('.item__count input[type="number"]');
@@ -71,6 +72,9 @@ function updateBasketDelivery(itemsInfo) {
     firstDateRange.style.display = "none";
     secondDateRange.style.display = "none";
     return;
+  } else {
+    firstProductList.style.display = "flex";
+    firstDateRange.style.display = "block";
   }
 
   let hasExtraItems = false;

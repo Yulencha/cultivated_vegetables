@@ -94,7 +94,7 @@ function handlePaymentSubmit(event) {
   let inputBlock = selectedInput.closest(".payment-option__radio-input");
   let cardAbsoluteUrl = inputBlock.querySelector(".payment-option__card-img").src;
   let urlObj = new URL(cardAbsoluteUrl);
-  let cardRelativePath = "." + urlObj.pathname;
+  let cardRelativePath = "." + urlObj.pathname.slice(urlObj.pathname.indexOf("/img/"));
   let cardNumber = inputBlock.querySelector(".payment-option__card-details").textContent;
   let cardExpiry = inputBlock.querySelector(".payment-option__card-expired").textContent;
 
